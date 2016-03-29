@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "GMBQRCodeScan.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet GMBQRCodeScan *scanView;
 
 @end
 
@@ -16,12 +19,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [self.scanView startScan];
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)back:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (IBAction)resultHandle:(GMBQRCodeScan *)sender {
+    NSLog(@"%@", sender.result);
+}
+
 
 @end
