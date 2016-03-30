@@ -20,6 +20,8 @@
     
     AVCaptureDeviceInput *_input;
     AVCaptureMetadataOutput *_output;
+    
+    dispatch_queue_t _sessionQueue;
 }
 
 + (instancetype)scanViewWithResultHandler:(void (^)(NSString *))resultHandler
@@ -37,6 +39,8 @@
     [_previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
     
     [self.layer addSublayer:_previewLayer];
+    
+    _sessionQueue = dispatch_queue_create("session queue", DISPATCH_QUEUE_SERIAL);
 }
 
 - (instancetype)init
@@ -58,10 +62,11 @@
 //只会在IB中执行, 不影响实际运行
 - (void)prepareForInterfaceBuilder
 {
-    UIImage *image = [UIImage imageNamed:@"QR_Code.jpg"
-                                inBundle:[NSBundle bundleForClass:[self class]]
-           compatibleWithTraitCollection:self.traitCollection];
-    self.layer.contents = (id)image.CGImage;
+//    UIImage *image = [UIImage imageNamed:@"QR_Code.jpg"
+//                                inBundle:[NSBundle bundleForClass:[self class]]
+//           compatibleWithTraitCollection:self.traitCollection];
+//    self.layer.contents = (id)image.CGImage;
+    self.backgroundColor = [UIColor orangeColor];
 }
 
 - (void)layoutSubviews
@@ -71,6 +76,16 @@
 
 - (BOOL)startScan
 {
+    if ([AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo] == AVAuthorizationStatusDenied) {
+        
+        [[[UIAlertView alloc] initWithTitle:@"提示"
+                                   message:@"请在设置-隐私-相机中允许访问相机。"
+                                  delegate:self
+                         cancelButtonTitle:@"确定"
+                          otherButtonTitles:nil] show];
+        return NO;
+    }
+    
     AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
      _input = [AVCaptureDeviceInput deviceInputWithDevice:device error:nil];
     
@@ -95,16 +110,20 @@
         _captureSession.sessionPreset = self.presetLevel;
     }
     
-    [_captureSession  startRunning];
+    dispatch_async(_sessionQueue, ^{
+       [_captureSession  startRunning];
+    });
     
     return YES;
 }
 
 - (void)stopScan
 {
-    [_captureSession stopRunning];
-    [_captureSession removeInput:_input];
-    [_captureSession removeOutput:_output];
+    dispatch_async(_sessionQueue, ^{
+        [_captureSession stopRunning];
+        [_captureSession removeInput:_input];
+        [_captureSession removeOutput:_output];
+    });
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
@@ -119,18 +138,14 @@
     }
     else {
         _result = nil;
-        if (_resultHandler) {
-            _resultHandler(nil);
-        }
-        [self sendActionsForControlEvents:UIControlEventValueChanged];
         NSLog(@"无输出");
     }
-    [self stopScan];
 }
 
 - (void)dealloc
 {
-    [self stopScan];
+    NSLog(@"%@ dealloc", [self class]);
+    //[self stopScan];
 }
 
 @end

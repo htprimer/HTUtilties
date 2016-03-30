@@ -20,6 +20,8 @@
 		52F220951CA3CF19007671FD /* HTBlockTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F220941CA3CF19007671FD /* HTBlockTableView.m */; };
 		52F2209A1CA3CF20007671FD /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F220971CA3CF20007671FD /* UIView+Frame.m */; };
 		52F2209B1CA3CF20007671FD /* UIView+HTInspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F220991CA3CF20007671FD /* UIView+HTInspectable.m */; };
+		52F683F11CAA898E00F064E5 /* QRCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F683EF1CAA898E00F064E5 /* QRCodeScanViewController.m */; };
+		52F683F21CAA898E00F064E5 /* QRCodeScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F683F01CAA898E00F064E5 /* QRCodeScanViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,9 @@
 		52F220971CA3CF20007671FD /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		52F220981CA3CF20007671FD /* UIView+HTInspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HTInspectable.h"; sourceTree = "<group>"; };
 		52F220991CA3CF20007671FD /* UIView+HTInspectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HTInspectable.m"; sourceTree = "<group>"; };
+		52F683EE1CAA898E00F064E5 /* QRCodeScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QRCodeScanViewController.h; path = HTUtilties/QRCodeScanViewController.h; sourceTree = "<group>"; };
+		52F683EF1CAA898E00F064E5 /* QRCodeScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QRCodeScanViewController.m; path = HTUtilties/QRCodeScanViewController.m; sourceTree = "<group>"; };
+		52F683F01CAA898E00F064E5 /* QRCodeScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QRCodeScanViewController.xib; path = HTUtilties/QRCodeScanViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +122,9 @@
 			isa = PBXGroup;
 			children = (
 				52F220811CA3CDBD007671FD /* HTUtilties */,
+				52F683EE1CAA898E00F064E5 /* QRCodeScanViewController.h */,
+				52F683EF1CAA898E00F064E5 /* QRCodeScanViewController.m */,
+				52F683F01CAA898E00F064E5 /* QRCodeScanViewController.xib */,
 				52187A321CA0F1F30002FEF8 /* AppDelegate.h */,
 				52187A331CA0F1F30002FEF8 /* AppDelegate.m */,
 				52187A351CA0F1F30002FEF8 /* ViewController.h */,
@@ -168,8 +176,8 @@
 		52F220811CA3CDBD007671FD /* HTUtilties */ = {
 			isa = PBXGroup;
 			children = (
-				5267E6661CAA6BF900008484 /* Control */,
 				5267E6641CAA5AF300008484 /* Assets.xcassets */,
+				5267E6661CAA6BF900008484 /* Control */,
 				52F220911CA3CEF5007671FD /* Macro */,
 				52F220901CA3CEEE007671FD /* Category */,
 				52F2208F1CA3CDCA007671FD /* View */,
@@ -312,6 +320,7 @@
 				52187A3F1CA0F1F30002FEF8 /* LaunchScreen.storyboard in Resources */,
 				52187A3C1CA0F1F30002FEF8 /* Assets.xcassets in Resources */,
 				5267E6651CAA5AF300008484 /* Assets.xcassets in Resources */,
+				52F683F21CAA898E00F064E5 /* QRCodeScanViewController.xib in Resources */,
 				52187A3A1CA0F1F30002FEF8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +353,7 @@
 				52187A311CA0F1F30002FEF8 /* main.m in Sources */,
 				52F2209A1CA3CF20007671FD /* UIView+Frame.m in Sources */,
 				52F220951CA3CF19007671FD /* HTBlockTableView.m in Sources */,
+				52F683F11CAA898E00F064E5 /* QRCodeScanViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,7 +500,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jht-primer.HTUtilties";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.jht-primer.HTUtilties";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -506,7 +516,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jht-primer.HTUtilties";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.jht-primer.HTUtilties";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

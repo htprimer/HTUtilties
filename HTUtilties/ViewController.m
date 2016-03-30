@@ -8,10 +8,9 @@
 
 #import "ViewController.h"
 #import "GMBQRCodeScan.h"
+#import "QRCodeScanViewController.h"
 
 @interface ViewController ()
-
-@property (weak, nonatomic) IBOutlet GMBQRCodeScan *scanView;
 
 @end
 
@@ -20,16 +19,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.scanView startScan];
-
 }
 
-- (IBAction)back:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)resultHandle:(GMBQRCodeScan *)sender {
-    NSLog(@"%@", sender.result);
+- (IBAction)pushScanVC:(id)sender {
+    QRCodeScanViewController *vc = [[QRCodeScanViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
