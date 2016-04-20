@@ -9,7 +9,7 @@
 #import "GMBQRCodeScan.h"
 #import <AVFoundation/AVFoundation.h>
 
-@interface GMBQRCodeScan ()<AVCaptureMetadataOutputObjectsDelegate>
+@interface GMBQRCodeScan ()<AVCaptureMetadataOutputObjectsDelegate, UIAlertViewDelegate>
 
 @end
 
@@ -29,6 +29,15 @@
     GMBQRCodeScan *scanView = [[GMBQRCodeScan alloc] init];
     [scanView setResultHandler:resultHandler];
     return scanView;
+}
+
++ (NSString *)scanQRCodeInPicture:(UIImage *)image
+{
+    CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
+    CIImage *ciImage = [[CIImage alloc] initWithImage:image];
+    NSArray *features = [detector featuresInImage:ciImage];
+    CIQRCodeFeature *feature = features.firstObject;
+    return feature.messageString;
 }
 
 - (void)commonInit
@@ -129,6 +138,9 @@
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
     if ([metadataObjects count]) {
+        
+        [self stopScan];
+        
         AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
         _result = metadataObj.stringValue;
         if (_resultHandler) {
@@ -139,6 +151,13 @@
     else {
         _result = nil;
         NSLog(@"无输出");
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (_denyHandler) {
+        _denyHandler();
     }
 }
 

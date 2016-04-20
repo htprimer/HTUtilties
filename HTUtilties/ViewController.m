@@ -26,5 +26,10 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (IBAction)scanQRCodeInPicture:(UIButton *)sender
+{
+    UIImage *image = [sender imageForState:UIControlStateNormal];
+    NSLog(@"%@", [GMBQRCodeScan scanQRCodeInPicture:image]);
+}
 
 @end

@@ -13,6 +13,8 @@ IBInspectable
 
 @property (nonatomic, copy) void (^resultHandler)(NSString *result);
 
+@property (nonatomic, copy) void (^denyHandler)();
+
 //扫描精度 AVCaptureSessionPreset 
 @property (nonatomic, copy) NSString *presetLevel;
 
@@ -20,8 +22,13 @@ IBInspectable
 
 + (instancetype)scanViewWithResultHandler:(void (^)(NSString *result))resultHandler;
 
+//扫描图片中的二维码 iOS8以上才支持
++ (NSString *)scanQRCodeInPicture:(UIImage *)image;
+
 - (BOOL)startScan;
 
 - (void)stopScan;
+
+
 
 @end
