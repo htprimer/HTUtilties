@@ -17,6 +17,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+	
+//	UIView *view = [[UIView alloc] init];
+//	
+//	__weak typeof(view) weakView = view;
+//	
+//	NSMutableArray *array = [NSMutableArray array];
+//	[array addObject:weakView];
+//	
+//	view = nil;
+//	
+//	[array removeAllObjects];
+	
+	NSMutableArray *array = [NSMutableArray array];
+	
+	[array addObject:@"海天"];
+	[array addObject:@"john"];
+	
+	NSLog(@"%@", array);
+	
     return YES;
 }
 
