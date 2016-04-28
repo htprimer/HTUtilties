@@ -35,4 +35,22 @@
 - (IBAction)testAction:(id)sender {
 	
 }
+
+- (NSInteger)testCount
+{
+	static NSInteger count = 5;
+	count++;
+	NSLog(@(count));
+	return count;
+}
+
+- (NSArray *)testArray
+{
+	static NSInteger count = 5;
+	count++;
+	NSLog(@"%@", @(count));
+	return @[@1, @2, @3, @4, @5];
+}
+
+
 @end

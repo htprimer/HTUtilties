@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -33,12 +34,28 @@
 	
 	[array addObject:@"海天"];
 	[array addObject:@"john"];
+	[array addObject:@5];
 	
 	NSMutableArray *bigArray = [NSMutableArray array];
 	[bigArray addObject:array];
 	
 	NSLog(@"%@", array);
 	NSLog(@"%@", bigArray);
+	
+	NSDictionary *dict = @{@"name":@"江海天"};
+	
+	NSMutableDictionary *bigDict = [NSMutableDictionary dictionary];
+	bigDict[@"dict"] = dict;
+	bigDict[@"array"] = bigArray;
+	
+	NSLog(@"%@", dict);
+	NSLog(@"%@", bigDict);
+	
+	ViewController *vc = [[ViewController alloc] init];
+	
+	for (id obj in vc.testArray) {
+		NSLog([obj description]);
+	}
 	
     return YES;
 }

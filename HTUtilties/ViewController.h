@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+- (NSInteger)testCount;
+
+- (NSArray *)testArray;
 
 @end
 

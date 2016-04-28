@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		52013CB31CD0C34B00E4B7F8 /* UIControl+HTDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 52013CB21CD0C34B00E4B7F8 /* UIControl+HTDebug.m */; };
+		52013CB71CD1F1C900E4B7F8 /* NSDictionary+HTDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 52013CB61CD1F1C900E4B7F8 /* NSDictionary+HTDebug.m */; };
 		52187A311CA0F1F30002FEF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52187A301CA0F1F30002FEF8 /* main.m */; };
 		52187A341CA0F1F30002FEF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52187A331CA0F1F30002FEF8 /* AppDelegate.m */; };
 		52187A371CA0F1F30002FEF8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52187A361CA0F1F30002FEF8 /* ViewController.m */; };
@@ -47,6 +48,8 @@
 /* Begin PBXFileReference section */
 		52013CB11CD0C34B00E4B7F8 /* UIControl+HTDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+HTDebug.h"; sourceTree = "<group>"; };
 		52013CB21CD0C34B00E4B7F8 /* UIControl+HTDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+HTDebug.m"; sourceTree = "<group>"; };
+		52013CB51CD1F1C900E4B7F8 /* NSDictionary+HTDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+HTDebug.h"; sourceTree = "<group>"; };
+		52013CB61CD1F1C900E4B7F8 /* NSDictionary+HTDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+HTDebug.m"; sourceTree = "<group>"; };
 		52187A2C1CA0F1F30002FEF8 /* HTUtilties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTUtilties.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52187A301CA0F1F30002FEF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		52187A321CA0F1F30002FEF8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 				52B9CF871CC8C0BC003BCB03 /* UIView+HTDebug.m */,
 				52B68EA81CCE1B8600F7A086 /* NSArray+addtion.h */,
 				52B68EA91CCE1B8600F7A086 /* NSArray+addtion.m */,
+				52013CB51CD1F1C900E4B7F8 /* NSDictionary+HTDebug.h */,
+				52013CB61CD1F1C900E4B7F8 /* NSDictionary+HTDebug.m */,
 				52013CB11CD0C34B00E4B7F8 /* UIControl+HTDebug.h */,
 				52013CB21CD0C34B00E4B7F8 /* UIControl+HTDebug.m */,
 			);
@@ -373,6 +378,7 @@
 				52187A311CA0F1F30002FEF8 /* main.m in Sources */,
 				52F2209A1CA3CF20007671FD /* UIView+Frame.m in Sources */,
 				52F220951CA3CF19007671FD /* HTBlockTableView.m in Sources */,
+				52013CB71CD1F1C900E4B7F8 /* NSDictionary+HTDebug.m in Sources */,
 				52F683F11CAA898E00F064E5 /* QRCodeScanViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

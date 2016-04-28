@@ -25,7 +25,7 @@
 
 - (NSString *)readableString
 {
-	NSMutableString *content = [NSMutableString stringWithFormat:@"%@[\n", [super description]];
+	NSMutableString *content = [NSMutableString stringWithFormat:@"%@ [\n", [self class]];
 	
 	for (NSObject *obj in self) {
 		
@@ -38,8 +38,11 @@
 		}
 		
 		NSString *contentString = [mutableArray componentsJoinedByString:@"\n"];
-		
-		[content appendString:[NSString stringWithFormat:@"%@,\n", contentString]];
+		if (obj == self.lastObject) {   // not thread safe
+			[content appendString:[NSString stringWithFormat:@"%@\n", contentString]];
+		} else {
+			[content appendString:[NSString stringWithFormat:@"%@,\n", contentString]];
+		}
 	}
 	[content appendString:@"]"];
 	
