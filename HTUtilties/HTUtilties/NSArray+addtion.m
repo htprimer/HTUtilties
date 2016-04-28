@@ -28,7 +28,18 @@
 	NSMutableString *content = [NSMutableString stringWithFormat:@"%@[\n", [super description]];
 	
 	for (NSObject *obj in self) {
-		[content appendString:[NSString stringWithFormat:@"\t%@,\n", obj]];
+		
+		NSArray *array = [obj.debugDescription componentsSeparatedByString:@"\n"];
+		NSMutableArray *mutableArray = [NSMutableArray array];
+		
+		for (NSString *str in array) {
+			NSString *lineString = [@"\t" stringByAppendingString:str];
+			[mutableArray addObject:lineString];
+		}
+		
+		NSString *contentString = [mutableArray componentsJoinedByString:@"\n"];
+		
+		[content appendString:[NSString stringWithFormat:@"%@,\n", contentString]];
 	}
 	[content appendString:@"]"];
 	

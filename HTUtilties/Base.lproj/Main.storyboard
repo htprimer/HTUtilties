@@ -42,7 +42,7 @@
                                     <action selector="pushScanVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Fw-Y4-uen"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1e-1F-U8v">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1e-1F-U8v">
                                 <rect key="frame" x="82" y="94" width="211" height="210"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="s1e-1F-U8v" secondAttribute="height" multiplier="211:195" id="iqc-PW-0iI"/>
@@ -56,6 +56,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="scanQRCodeInPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ps-TW-LmM"/>
+                                    <action selector="testAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mAY-0B-oI8"/>
                                 </connections>
                             </button>
                         </subviews>

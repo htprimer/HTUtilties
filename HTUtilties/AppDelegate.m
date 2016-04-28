@@ -34,7 +34,11 @@
 	[array addObject:@"海天"];
 	[array addObject:@"john"];
 	
+	NSMutableArray *bigArray = [NSMutableArray array];
+	[bigArray addObject:array];
+	
 	NSLog(@"%@", array);
+	NSLog(@"%@", bigArray);
 	
     return YES;
 }

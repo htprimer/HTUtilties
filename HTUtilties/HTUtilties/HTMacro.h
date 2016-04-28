@@ -17,9 +17,15 @@
 #define SYSTEM_VERSION   [[UIDevice currentDevice].systemVersion floatValue]
 
 #ifdef DEBUG
-    #define DLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+	#define NSLog(format, ...)	do {																			\
+									fprintf(stderr, "<%s : %d> %s\n",                                           \
+									[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],  \
+									__LINE__, __func__);                                                        \
+									(NSLog)((format), ##__VA_ARGS__);                                           \
+									fprintf(stderr, "-------\n");                                               \
+								} while (0)
 #else
-    #define DLog( s, ... )
+    #define DLog(s, ...)
     #define NSLog(...)
 #endif
 

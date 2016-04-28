@@ -32,4 +32,7 @@
     NSLog(@"%@", [GMBQRCodeScan scanQRCodeInPicture:image]);
 }
 
+- (IBAction)testAction:(id)sender {
+	
+}
 @end
