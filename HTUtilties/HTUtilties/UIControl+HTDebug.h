@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define EnableHTDebugControl 0
+
 @interface UIControl (HTDebug)
 
 @end

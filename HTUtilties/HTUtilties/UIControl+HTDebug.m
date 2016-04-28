@@ -11,6 +11,7 @@
 
 @implementation UIControl (HTDebug)
 
+#if EnableHTDebugControl
 + (void)load
 {
 	Method sendAction = class_getInstanceMethod([self class], @selector(sendAction:to:forEvent:));
@@ -18,6 +19,7 @@
 	
 	method_exchangeImplementations(sendAction, debugSendAction);
 }
+#endif
 
 - (void)debugSendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event
 {

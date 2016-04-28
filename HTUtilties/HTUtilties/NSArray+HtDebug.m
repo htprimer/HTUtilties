@@ -6,9 +6,9 @@
 //  Copyright © 2016年 江海天. All rights reserved.
 //
 
-#import "NSArray+addtion.h"
+#import "NSArray+HTDebug.h"
 
-@implementation NSArray (addtion)
+@implementation NSArray (HTDebug)
 
 //- (NSString *)description
 //{

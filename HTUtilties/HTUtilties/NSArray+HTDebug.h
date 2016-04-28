@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray (addtion)
+@interface NSArray (HTDebug)
 
 
 
