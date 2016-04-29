@@ -19,16 +19,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 	
-//	UIView *view = [[UIView alloc] init];
-//	
-//	__weak typeof(view) weakView = view;
-//	
+	UILabel *label = [[UILabel alloc] init];
+	
 //	NSMutableArray *array = [NSMutableArray array];
-//	[array addObject:weakView];
-//	
-//	view = nil;
+//	[array addObject:label];
 //	
 //	[array removeAllObjects];
+	label = nil;
 	
 	NSMutableArray *array = [NSMutableArray array];
 	

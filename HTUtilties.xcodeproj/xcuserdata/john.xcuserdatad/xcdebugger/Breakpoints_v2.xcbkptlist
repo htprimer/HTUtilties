@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HTUtilties/AppDelegate.m"
-            timestampString = "483524572.683758"
+            timestampString = "483595656.15851"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "-application:didFinishLaunchingWithOptions:"
             landmarkType = "5">
             <Locations>
@@ -106,12 +106,12 @@
                   moduleName = "HTUtilties"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/john/Projects/HTUtilties/HTUtilties/AppDelegate.m"
-                  timestampString = "483524573.698464"
+                  timestampString = "483595662.931593"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "1958">
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "1717">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -121,12 +121,12 @@
                   moduleName = "HTUtilties"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/john/Projects/HTUtilties/HTUtilties/AppDelegate.m"
-                  timestampString = "483524573.698578"
+                  timestampString = "483595662.931805"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "1994">
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "1722">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HTUtilties/AppDelegate.m"
-            timestampString = "483524572.683758"
+            timestampString = "483595656.15851"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "-application:didFinishLaunchingWithOptions:"
             landmarkType = "5">
             <Locations>
@@ -154,12 +154,12 @@
                   moduleName = "HTUtilties"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/john/Projects/HTUtilties/HTUtilties/AppDelegate.m"
-                  timestampString = "483524573.699208"
+                  timestampString = "483595662.932591"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "1958">
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "1717">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -169,12 +169,12 @@
                   moduleName = "HTUtilties"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/john/Projects/HTUtilties/HTUtilties/AppDelegate.m"
-                  timestampString = "483524573.699321"
+                  timestampString = "483595662.932732"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "1994">
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "1722">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -208,6 +208,22 @@
             startingLineNumber = "47"
             endingLineNumber = "47"
             landmarkName = "-testArray"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HTUtilties/AppDelegate.m"
+            timestampString = "483594852.54567"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "-application:didFinishLaunchingWithOptions:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
