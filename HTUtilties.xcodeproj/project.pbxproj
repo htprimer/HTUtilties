@@ -19,6 +19,8 @@
 		52187A551CA0F1F30002FEF8 /* HTUtiltiesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52187A541CA0F1F30002FEF8 /* HTUtiltiesUITests.m */; };
 		5267E6631CAA205700008484 /* GMBQRCodeScan.m in Sources */ = {isa = PBXBuildFile; fileRef = 5267E6621CAA205700008484 /* GMBQRCodeScan.m */; };
 		5267E6651CAA5AF300008484 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5267E6641CAA5AF300008484 /* Assets.xcassets */; };
+		528A5A621D01813200D6A50C /* HTModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 528A5A611D01813200D6A50C /* HTModel.m */; };
+		528A5A651D01864E00D6A50C /* HTTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 528A5A641D01864E00D6A50C /* HTTestModel.m */; };
 		52B68EAA1CCE1B8600F7A086 /* NSArray+HTDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B68EA91CCE1B8600F7A086 /* NSArray+HTDebug.m */; };
 		52B9CF881CC8C0BC003BCB03 /* UIView+HTDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B9CF871CC8C0BC003BCB03 /* UIView+HTDebug.m */; };
 		52F220951CA3CF19007671FD /* HTBlockTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F220941CA3CF19007671FD /* HTBlockTableView.m */; };
@@ -69,6 +71,10 @@
 		5267E6611CAA205700008484 /* GMBQRCodeScan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMBQRCodeScan.h; sourceTree = "<group>"; };
 		5267E6621CAA205700008484 /* GMBQRCodeScan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMBQRCodeScan.m; sourceTree = "<group>"; };
 		5267E6641CAA5AF300008484 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		528A5A601D01813200D6A50C /* HTModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTModel.h; sourceTree = "<group>"; };
+		528A5A611D01813200D6A50C /* HTModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTModel.m; sourceTree = "<group>"; };
+		528A5A631D01864E00D6A50C /* HTTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTestModel.h; sourceTree = "<group>"; };
+		528A5A641D01864E00D6A50C /* HTTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTestModel.m; sourceTree = "<group>"; };
 		52B68EA81CCE1B8600F7A086 /* NSArray+HTDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HTDebug.h"; sourceTree = "<group>"; };
 		52B68EA91CCE1B8600F7A086 /* NSArray+HTDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HTDebug.m"; sourceTree = "<group>"; };
 		52B9CF831CC77567003BCB03 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -147,6 +153,8 @@
 				52187A3D1CA0F1F30002FEF8 /* LaunchScreen.storyboard */,
 				52187A401CA0F1F30002FEF8 /* Info.plist */,
 				52187A2F1CA0F1F30002FEF8 /* Supporting Files */,
+				528A5A631D01864E00D6A50C /* HTTestModel.h */,
+				528A5A641D01864E00D6A50C /* HTTestModel.m */,
 			);
 			path = HTUtilties;
 			sourceTree = "<group>";
@@ -187,10 +195,20 @@
 			name = Control;
 			sourceTree = "<group>";
 		};
+		528A5A5F1D01811700D6A50C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				528A5A601D01813200D6A50C /* HTModel.h */,
+				528A5A611D01813200D6A50C /* HTModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		52F220811CA3CDBD007671FD /* HTUtilties */ = {
 			isa = PBXGroup;
 			children = (
 				5267E6641CAA5AF300008484 /* Assets.xcassets */,
+				528A5A5F1D01811700D6A50C /* Model */,
 				5267E6661CAA6BF900008484 /* Control */,
 				52F220911CA3CEF5007671FD /* Macro */,
 				52F220901CA3CEEE007671FD /* Category */,
@@ -378,6 +396,8 @@
 				52187A311CA0F1F30002FEF8 /* main.m in Sources */,
 				52F2209A1CA3CF20007671FD /* UIView+Frame.m in Sources */,
 				52F220951CA3CF19007671FD /* HTBlockTableView.m in Sources */,
+				528A5A621D01813200D6A50C /* HTModel.m in Sources */,
+				528A5A651D01864E00D6A50C /* HTTestModel.m in Sources */,
 				52013CB71CD1F1C900E4B7F8 /* NSDictionary+HTDebug.m in Sources */,
 				52F683F11CAA898E00F064E5 /* QRCodeScanViewController.m in Sources */,
 			);

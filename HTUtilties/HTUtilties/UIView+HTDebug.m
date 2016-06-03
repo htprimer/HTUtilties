@@ -71,7 +71,7 @@ void invokePrimaryMethod(id self, SEL selecotr)
 		NSLog(@"dealloc exception %@", exception);
 	}
 	[self debugDealloc];
-	//NSLog(@"dealloc	%@	count:%d", [self class], (int)self);
+	//NSLog(@"dealloc	%@	address:%d", [self class], (int)self);
 	//printf("count %s %d", [[self class] description].cString, objectCount);
 }
 

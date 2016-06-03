@@ -8,8 +8,11 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "HTTestModel.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, copy)  void (^testBlock)(id obj);
 
 @end
 
@@ -19,40 +22,49 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 	
-	UILabel *label = [[UILabel alloc] init];
+	HTTestModel *model1 = [[HTTestModel alloc] init];
+	model1.name = @"model1模型1";
+	model1.array = @[@"ele1", @"ele2", @"ele3"];
+	model1.dict = @{@"key1":@"value1", @"key2":@"value2", @"key3":@"value3"};
+	
+	NSLog(@"%@", model1);
+	
+	HTTestModel *model2 = [[HTTestModel alloc] init];
+	model2.name = @"model2模型2";
+	model2.model = model1;
+	
+	NSLog(@"%@", model2);
+	
+//	NSMutableDictionary *dict = @{@"nil":obj};
+	
+//	[dict setValue:nil forKey:nil]
 	
 //	NSMutableArray *array = [NSMutableArray array];
-//	[array addObject:label];
 //	
-//	[array removeAllObjects];
-	label = nil;
-	
-	NSMutableArray *array = [NSMutableArray array];
-	
-	[array addObject:@"海天"];
-	[array addObject:@"john"];
-	[array addObject:@5];
-	
-	NSMutableArray *bigArray = [NSMutableArray array];
-	[bigArray addObject:array];
-	
-	NSLog(@"%@", array);
-	NSLog(@"%@", bigArray);
-	
-	NSDictionary *dict = @{@"name":@"江海天"};
-	
-	NSMutableDictionary *bigDict = [NSMutableDictionary dictionary];
-	bigDict[@"dict"] = dict;
-	bigDict[@"array"] = bigArray;
-	
-	NSLog(@"%@", dict);
-	NSLog(@"%@", bigDict);
-	
-	ViewController *vc = [[ViewController alloc] init];
-	
-	for (id obj in vc.testArray) {
-		NSLog([obj description]);
-	}
+//	[array addObject:@"海天"];
+//	[array addObject:@"john"];
+//	[array addObject:@5];
+//	
+//	NSMutableArray *bigArray = [NSMutableArray array];
+//	[bigArray addObject:array];
+//	
+//	NSLog(@"%@", array);
+//	NSLog(@"%@", bigArray);
+//	
+//	NSDictionary *dict = @{@"name":@"江海天"};
+//	
+//	NSMutableDictionary *bigDict = [NSMutableDictionary dictionary];
+//	bigDict[@"dict"] = dict;
+//	bigDict[@"array"] = bigArray;
+//	
+//	NSLog(@"%@", dict);
+//	NSLog(@"%@", bigDict);
+//	
+//	ViewController *vc = [[ViewController alloc] init];
+//	
+//	for (id obj in vc.testArray) {
+//		NSLog([obj description]);
+//	}
 	
     return YES;
 }

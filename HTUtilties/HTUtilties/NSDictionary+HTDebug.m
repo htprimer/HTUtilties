@@ -15,7 +15,7 @@
 	NSMutableString *content = [NSMutableString stringWithFormat:@"%@ {\n", [self class]];
 	
 	for (NSString *key in self) {
-		NSString *keyValue = [NSString stringWithFormat:@"%@:%@", key, self[key]];
+		NSString *keyValue = [NSString stringWithFormat:@"%@ : %@", key, self[key]];
 		
 		NSArray *array = [keyValue componentsSeparatedByString:@"\n"];
 		NSMutableArray *mutableArray = [NSMutableArray array];
