@@ -18,7 +18,7 @@
 
 @property (nonatomic, strong) NSObject *object;
 
-@property (nonatomic, strong) HTModel *model;
+@property (nonatomic, strong) HTTestModel *model;
 
 @property (nonatomic, assign) float height;
 

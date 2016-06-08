@@ -10,6 +10,8 @@
 #import "GMBQRCodeScan.h"
 #import "QRCodeScanViewController.h"
 #import "LeakViewController.h"
+#import "HTTestModel.h"
+#import "HTBetaModel.h"
 
 @interface ViewController ()
 
@@ -22,7 +24,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	HTTestModel *model1 = [[HTTestModel alloc] init];
+	model1.name = @"model1";
+	model1.height = 38;
+	model1.dict = @{@"key":@"value"};
+	NSLog(@"%@", model1);
 	
+	HTBetaModel *model2 = [[HTBetaModel alloc] init];
+	model2.secondName = @"model2";
+	NSLog(@"%@", model2);
+	
+	HTBetaModel *model3 = [[HTBetaModel alloc] init];
+	model3.secondName = @"model3";
+	NSLog(@"%@", model3);
 }
 
 - (IBAction)pushScanVC:(id)sender {

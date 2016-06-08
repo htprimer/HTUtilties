@@ -10,5 +10,9 @@
 
 @implementation HTTestModel
 
++ (void)initialize
+{
+
+}
 
 @end

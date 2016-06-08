@@ -9,49 +9,98 @@
 #import "HTModel.h"
 #import <objc/runtime.h>
 
-static NSArray<NSString *> *_propertyNameArray = nil;
+#define PropertyNameAttributesKey @"PropertyNameAttributes"
+
+@interface HTPropertyAttributes : HTModel
+@property (nonatomic, assign) Class cls;
+@end
+
+@implementation HTPropertyAttributes
+@end
+
+
+
+
 
 @implementation HTModel
 
-+ (NSArray *)propertyNameArray
++ (NSDictionary *)propertyMeta
 {
-	static dispatch_once_t onceToken;
-	dispatch_once(&onceToken, ^{
-		NSMutableArray *propertyNameArray = [NSMutableArray array];
+	NSMutableDictionary *propertyMeta = [NSMutableDictionary dictionary];
+	
+	unsigned count;
+	objc_property_t *propertyArray = class_copyPropertyList(self, &count);
+	for (int i = 0; i < count; i++) {
+		const char *name = property_getName(propertyArray[i]);
+		//const char *attributes = property_getAttributes(propertyArray[i]);
 		
-		unsigned count;
-		objc_property_t *propertyArray = class_copyPropertyList([self class], &count);
-		for (int i = 0; i < count; i++) {
-			const char *name = property_getName(propertyArray[i]);
-			NSString *nameStr = @(name);
-			[propertyNameArray addObject:nameStr];
+		HTPropertyAttributes *attribute = [HTPropertyAttributes new];
+		unsigned int attrCount;
+		objc_property_attribute_t *attrs = property_copyAttributeList(propertyArray[i], &attrCount);
+		if (attrs[0].name[0] == 'T' && attrs[0].value[0] == '@') {
+			unsigned long len = strlen(attrs[0].value);
+			if (len > 3) {
+				char className[len - 2];
+				className[len - 3] = '\0';
+				memcpy(className, attrs[0].value + 2, len - 3);
+				attribute.cls = objc_getClass(className);
+			}
 		}
-		free(propertyArray);
+		free(attrs);
 		
-		_propertyNameArray = [propertyNameArray copy];
-	});
-	return _propertyNameArray;
+		propertyMeta[@(name)] = attribute;
+	}
+	free(propertyArray);
+	
+	return [propertyMeta copy];
+}
+
++ (NSDictionary *)propertyNameAttributes
+{
+	NSDictionary *dict = objc_getAssociatedObject(self, PropertyNameAttributesKey);
+	if (!dict) {
+		dict = [self propertyMeta];
+		[self setPropertyNameAttributes:dict];
+	}
+	return dict;
+}
+
++ (void)setPropertyNameAttributes:(NSDictionary *)dict
+{
+	objc_setAssociatedObject(self, PropertyNameAttributesKey, dict, OBJC_ASSOCIATION_COPY);
 }
 
 - (instancetype)initWithDict:(NSDictionary *)dict
 {
+	if (![dict isKindOfClass:[NSDictionary class]]) return nil;
 	if (self = [super init]) {
 		[self setValuesForKeysWithDictionary:dict];
 	}
 	return self;
 }
 
+- (void)setValue:(id)value forKey:(NSString *)key
+{
+	NSDictionary *propertyMeta = [[self class] propertyNameAttributes];
+	HTPropertyAttributes *attribute = propertyMeta[key];
+	if ([attribute.cls isSubclassOfClass:[HTModel class]] && [value isKindOfClass:[NSDictionary class]]) {
+		[self setValue:[[attribute.cls alloc] initWithDict:value] forKey:key];
+	} else {
+		[super setValue:value forKey:key];
+	}
+}
+
 - (NSDictionary *)propertyDict
 {
- 	return [self dictionaryWithValuesForKeys:[[self class] propertyNameArray]];
+	return [self dictionaryWithValuesForKeys:[[self class] propertyNameAttributes].allKeys];
 }
 
 - (NSString *)readableString
 {
-	//NSDictionary *propertyDict = [self dictionaryWithValuesForKeys:[[self class] propertyNameArray]];
-	//[HTModel propertyNameArray] 这返回父类的property
+	NSArray *propertyNameArray = [[self class] propertyNameAttributes].allKeys;
+	
 	NSMutableString *content = [NSMutableString stringWithFormat:@"%@:\n", [self class]];
-	for (NSString *propertyName in [[self class] propertyNameArray]) {
+	for (NSString *propertyName in propertyNameArray) {
 		
 		NSObject *value = [self valueForKey:propertyName];
 		if ([value isKindOfClass:[NSString class]]) {
@@ -67,7 +116,7 @@ static NSArray<NSString *> *_propertyNameArray = nil;
 		}
 		keyValue = [mutableArray componentsJoinedByString:@"\n"];
 		
-		if (_propertyNameArray.lastObject == propertyName) {   //not thread safe
+		if (propertyNameArray.lastObject == propertyName) {   //not thread safe
 			[content appendFormat:@"%@\n", keyValue];
 		} else {
 			[content appendFormat:@"%@,\n", keyValue];

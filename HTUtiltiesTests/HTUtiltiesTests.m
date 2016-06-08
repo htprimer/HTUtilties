@@ -7,6 +7,9 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "HTModel.h"
+#import "HTTestModel.h"
+#import "HTBetaModel.h"
 
 @interface HTUtiltiesTests : XCTestCase
 
@@ -24,11 +27,22 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    
-    BOOL var = 3;
-    
-    
+- (void)testModel
+{
+	NSMutableDictionary *dict1 = [NSMutableDictionary dictionary];
+	[dict1 setValue:@"model1" forKey:@"name"];
+	[dict1 setValue:@(10.2) forKey:@"height"];
+	[dict1 setValue:@"extraValue" forKey:@"extraKey"];
+	
+	NSMutableDictionary *dict2 = [NSMutableDictionary dictionary];
+	[dict2 setValue:@"model2" forKey:@"name"];
+	[dict2 setValue:@(10.2) forKey:@"height"];
+	[dict2 setValue:dict1 forKey:@"model"];
+	
+	HTTestModel *model1 = [[HTTestModel alloc] initWithDict:dict1];
+	HTTestModel *model2 = [[HTTestModel alloc] initWithDict:dict2];
+	NSLog(@"%@", model1);
+	NSLog(@"%@", model2);
 }
 
 - (void)testPerformanceExample {
