@@ -21,6 +21,7 @@
 		5267E6651CAA5AF300008484 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5267E6641CAA5AF300008484 /* Assets.xcassets */; };
 		528A5A621D01813200D6A50C /* HTModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 528A5A611D01813200D6A50C /* HTModel.m */; };
 		528A5A651D01864E00D6A50C /* HTTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 528A5A641D01864E00D6A50C /* HTTestModel.m */; };
+		52A726281D05CD7C00072F20 /* LeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A726271D05CD7C00072F20 /* LeakViewController.m */; };
 		52B68EAA1CCE1B8600F7A086 /* NSArray+HTDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B68EA91CCE1B8600F7A086 /* NSArray+HTDebug.m */; };
 		52B9CF881CC8C0BC003BCB03 /* UIView+HTDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B9CF871CC8C0BC003BCB03 /* UIView+HTDebug.m */; };
 		52F220951CA3CF19007671FD /* HTBlockTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F220941CA3CF19007671FD /* HTBlockTableView.m */; };
@@ -75,6 +76,8 @@
 		528A5A611D01813200D6A50C /* HTModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTModel.m; sourceTree = "<group>"; };
 		528A5A631D01864E00D6A50C /* HTTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTestModel.h; sourceTree = "<group>"; };
 		528A5A641D01864E00D6A50C /* HTTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTestModel.m; sourceTree = "<group>"; };
+		52A726261D05CD7C00072F20 /* LeakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeakViewController.h; sourceTree = "<group>"; };
+		52A726271D05CD7C00072F20 /* LeakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeakViewController.m; sourceTree = "<group>"; };
 		52B68EA81CCE1B8600F7A086 /* NSArray+HTDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HTDebug.h"; sourceTree = "<group>"; };
 		52B68EA91CCE1B8600F7A086 /* NSArray+HTDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HTDebug.m"; sourceTree = "<group>"; };
 		52B9CF831CC77567003BCB03 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 				52187A331CA0F1F30002FEF8 /* AppDelegate.m */,
 				52187A351CA0F1F30002FEF8 /* ViewController.h */,
 				52187A361CA0F1F30002FEF8 /* ViewController.m */,
+				52A726261D05CD7C00072F20 /* LeakViewController.h */,
+				52A726271D05CD7C00072F20 /* LeakViewController.m */,
 				52187A381CA0F1F30002FEF8 /* Main.storyboard */,
 				52187A3B1CA0F1F30002FEF8 /* Assets.xcassets */,
 				52187A3D1CA0F1F30002FEF8 /* LaunchScreen.storyboard */,
@@ -388,6 +393,7 @@
 			files = (
 				52B68EAA1CCE1B8600F7A086 /* NSArray+HTDebug.m in Sources */,
 				52B9CF881CC8C0BC003BCB03 /* UIView+HTDebug.m in Sources */,
+				52A726281D05CD7C00072F20 /* LeakViewController.m in Sources */,
 				5267E6631CAA205700008484 /* GMBQRCodeScan.m in Sources */,
 				52187A371CA0F1F30002FEF8 /* ViewController.m in Sources */,
 				52F2209B1CA3CF20007671FD /* UIView+HTInspectable.m in Sources */,

@@ -20,4 +20,6 @@
 
 @property (nonatomic, strong) HTModel *model;
 
+@property (nonatomic, assign) float height;
+
 @end

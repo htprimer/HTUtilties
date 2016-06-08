@@ -12,7 +12,7 @@
 
 @interface AppDelegate ()
 
-@property (nonatomic, copy)  void (^testBlock)(id obj);
+@property (nonatomic, copy)  void (^testBlock)();
 
 @end
 
@@ -21,19 +21,44 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+//	HTTestModel *model = [[HTTestModel alloc] initWithDict:@{@"height":@(12.5), @"name":@"testmodel"}];
+//	HTTestModel *model1 = [[HTTestModel alloc] init];
+//	model1.name = @"model1模型1";
+//	model1.array = @[@"ele1", @"ele2", @"ele3"];
+//	model1.dict = @{@"key1":@"value1", @"key2":@"value2", @"key3":@"value3"};
+//	
+//	NSLog(@"%@", model);
 	
-	HTTestModel *model1 = [[HTTestModel alloc] init];
-	model1.name = @"model1模型1";
-	model1.array = @[@"ele1", @"ele2", @"ele3"];
-	model1.dict = @{@"key1":@"value1", @"key2":@"value2", @"key3":@"value3"};
+	UIView *view = [[UIView alloc] init];
+	view = nil;
+//
+	int a = 10;
+	NSNumber *b = @(10);
+
+	[self setTestBlock:^() {
+		NSLog(@"%d", a+b.intValue);
+	}];
+	a = 20;
+	self.testBlock();
 	
-	NSLog(@"%@", model1);
 	
-	HTTestModel *model2 = [[HTTestModel alloc] init];
-	model2.name = @"model2模型2";
-	model2.model = model1;
+	NSLog(@"%@", [self.testBlock class]);
 	
-	NSLog(@"%@", model2);
+	view = [[UIView alloc] init];
+	
+	[self setTestBlock:^{
+		view.frame = CGRectZero;
+	}];
+	
+	view = nil;
+	
+	self.testBlock = nil;
+//	HTTestModel *model2 = [[HTTestModel alloc] init];
+//	model2.name = @"model2模型2";
+//	model2.model = model1;
+//	
+//	NSLog(@"%@", model2);
 	
 //	NSMutableDictionary *dict = @{@"nil":obj};
 	

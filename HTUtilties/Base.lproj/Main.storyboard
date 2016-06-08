@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8my-8V-tRH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8my-8V-tRH">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -42,30 +41,11 @@
                                     <action selector="pushScanVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Fw-Y4-uen"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1e-1F-U8v">
-                                <rect key="frame" x="82" y="94" width="211" height="210"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="s1e-1F-U8v" secondAttribute="height" multiplier="211:195" id="iqc-PW-0iI"/>
-                                    <constraint firstAttribute="width" constant="211" id="lin-RY-HMF"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="QRCode2.jpg"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="iqc-PW-0iI"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="scanQRCodeInPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ps-TW-LmM"/>
-                                    <action selector="testAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mAY-0B-oI8"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KUe-Ti-Q3B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8J6-wx-9TR"/>
                             <constraint firstItem="KUe-Ti-Q3B" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="80" id="FCX-dI-XF1"/>
-                            <constraint firstItem="s1e-1F-U8v" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="Sev-U8-wy6"/>
-                            <constraint firstItem="s1e-1F-U8v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vfi-8z-Wl3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="21P-q4-wa0"/>
@@ -76,7 +56,4 @@
             <point key="canvasLocation" x="-360.5" y="36.5"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="QRCode2.jpg" width="210" height="210"/>
-    </resources>
 </document>

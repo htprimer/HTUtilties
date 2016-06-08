@@ -10,6 +10,4 @@
 
 @interface NSArray (HTDebug)
 
-
-
 @end

@@ -9,8 +9,11 @@
 #import "ViewController.h"
 #import "GMBQRCodeScan.h"
 #import "QRCodeScanViewController.h"
+#import "LeakViewController.h"
 
 @interface ViewController ()
+
+@property (nonatomic, weak) UIViewController *viewController;
 
 @end
 
@@ -18,39 +21,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-}
-
-- (IBAction)pushScanVC:(id)sender {
-    QRCodeScanViewController *vc = [[QRCodeScanViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (IBAction)scanQRCodeInPicture:(UIButton *)sender
-{
-    UIImage *image = [sender imageForState:UIControlStateNormal];
-    NSLog(@"%@", [GMBQRCodeScan scanQRCodeInPicture:image]);
-}
-
-- (IBAction)testAction:(id)sender {
+	
 	
 }
 
-- (NSInteger)testCount
-{
-	static NSInteger count = 5;
-	count++;
-	NSLog(@(count));
-	return count;
+- (IBAction)pushScanVC:(id)sender {
+	
+	LeakViewController *vc = [[LeakViewController alloc] init];
+	[self.navigationController pushViewController:vc animated:YES];
 }
 
-- (NSArray *)testArray
-{
-	static NSInteger count = 5;
-	count++;
-	NSLog(@"%@", @(count));
-	return @[@1, @2, @3, @4, @5];
-}
+
 
 
 @end

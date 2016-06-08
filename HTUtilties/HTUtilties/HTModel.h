@@ -10,4 +10,8 @@
 
 @interface HTModel : NSObject
 
+- (instancetype)initWithDict:(NSDictionary *)dict;
+
+- (NSDictionary *)propertyDict;
+
 @end

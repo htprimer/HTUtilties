@@ -1,14 +1,13 @@
 //
-//  ViewController.h
+//  LeakViewController.h
 //  HTUtilties
 //
-//  Created by 江海天 on 16/3/22.
+//  Created by 江海天 on 16/6/6.
 //  Copyright © 2016年 江海天. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface LeakViewController : UIViewController
 
 @end
-

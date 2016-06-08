@@ -9,7 +9,7 @@
 #import "HTModel.h"
 #import <objc/runtime.h>
 
-static NSArray *_propertyNameArray = nil;
+static NSArray<NSString *> *_propertyNameArray = nil;
 
 @implementation HTModel
 
@@ -33,14 +33,31 @@ static NSArray *_propertyNameArray = nil;
 	return _propertyNameArray;
 }
 
+- (instancetype)initWithDict:(NSDictionary *)dict
+{
+	if (self = [super init]) {
+		[self setValuesForKeysWithDictionary:dict];
+	}
+	return self;
+}
+
+- (NSDictionary *)propertyDict
+{
+ 	return [self dictionaryWithValuesForKeys:[[self class] propertyNameArray]];
+}
+
 - (NSString *)readableString
 {
-	NSDictionary *propertyDict = [self dictionaryWithValuesForKeys:[[self class] propertyNameArray]];  //[HTModel propertyNameArray] 这返回父类的property
-	
-	NSMutableString *content = [NSMutableString stringWithFormat:@"\n%@:\n", [self class]];
-	
-	for (NSString *key in propertyDict) {
-		NSString *keyValue = [NSString stringWithFormat:@"%@ = %@", key, propertyDict[key]];
+	//NSDictionary *propertyDict = [self dictionaryWithValuesForKeys:[[self class] propertyNameArray]];
+	//[HTModel propertyNameArray] 这返回父类的property
+	NSMutableString *content = [NSMutableString stringWithFormat:@"%@:\n", [self class]];
+	for (NSString *propertyName in [[self class] propertyNameArray]) {
+		
+		NSObject *value = [self valueForKey:propertyName];
+		if ([value isKindOfClass:[NSString class]]) {
+			value = [NSString stringWithFormat:@"\"%@\"", value];
+		}
+		NSString *keyValue = [NSString stringWithFormat:@"%@ = %@", propertyName, value];
 		
 		NSArray *array = [keyValue componentsSeparatedByString:@"\n"];
 		NSMutableArray *mutableArray = [NSMutableArray array];
@@ -50,13 +67,18 @@ static NSArray *_propertyNameArray = nil;
 		}
 		keyValue = [mutableArray componentsJoinedByString:@"\n"];
 		
-		if (propertyDict.allKeys.lastObject == key) {   //not thread safe
+		if (_propertyNameArray.lastObject == propertyName) {   //not thread safe
 			[content appendFormat:@"%@\n", keyValue];
 		} else {
 			[content appendFormat:@"%@,\n", keyValue];
 		}
 	}
 	return [content copy];
+}
+
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+	NSLog(@"undefinedKey %@, value %@", key, value);
 }
 
 - (NSString *)description

@@ -32,7 +32,8 @@ static int objectCount = 0;
 	objectCount++;
 	//object.objectCount = objectCount;
 	
-	NSLog(@"alloc %@ count:%d", [self class], objectCount);
+	//NSLog(@"alloc %@ count:%d", [self class], objectCount);
+	//NSLog(@"alloc %@", [self class]);
 	return [super alloc];
 }
 
@@ -65,11 +66,7 @@ void invokePrimaryMethod(id self, SEL selecotr)
 - (void)debugDealloc
 {
 	objectCount--;
-	@try {
-		NSLog(@"dealloc %@", [self class]);
-	} @catch (NSException *exception) {
-		NSLog(@"dealloc exception %@", exception);
-	}
+	//NSLog(@"dealloc %@", [self class]);
 	[self debugDealloc];
 	//NSLog(@"dealloc	%@	address:%d", [self class], (int)self);
 	//printf("count %s %d", [[self class] description].cString, objectCount);
