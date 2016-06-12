@@ -19,14 +19,11 @@
 @end
 
 
-
-
-
 @implementation HTModel
 
 + (NSDictionary *)propertyMeta
 {
-	NSMutableDictionary *propertyMeta = [NSMutableDictionary dictionary];
+	NSMutableDictionary *propertyMeta = [NSMutableDictionary new];
 	
 	unsigned count;
 	objc_property_t *propertyArray = class_copyPropertyList(self, &count);
@@ -109,7 +106,7 @@
 		NSString *keyValue = [NSString stringWithFormat:@"%@ = %@", propertyName, value];
 		
 		NSArray *array = [keyValue componentsSeparatedByString:@"\n"];
-		NSMutableArray *mutableArray = [NSMutableArray array];
+		NSMutableArray *mutableArray = [NSMutableArray new];
 		for (NSString *str in array) {
 			NSString *lineString = [@"\t" stringByAppendingString:str];
 			[mutableArray addObject:lineString];

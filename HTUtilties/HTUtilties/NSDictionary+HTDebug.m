@@ -18,7 +18,7 @@
 		NSString *keyValue = [NSString stringWithFormat:@"%@ : %@", key, self[key]];
 		
 		NSArray *array = [keyValue componentsSeparatedByString:@"\n"];
-		NSMutableArray *mutableArray = [NSMutableArray array];
+		NSMutableArray *mutableArray = [NSMutableArray new];
 		for (NSString *str in array) {
 			NSString *lineString = [@"\t" stringByAppendingString:str];
 			[mutableArray addObject:lineString];

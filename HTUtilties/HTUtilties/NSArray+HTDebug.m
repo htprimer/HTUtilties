@@ -10,19 +10,6 @@
 
 @implementation NSArray (HTDebug)
 
-//- (NSString *)description
-//{
-//	//NSString *content = nil;
-//	NSMutableString *content = [NSMutableString stringWithFormat:@"%@[\n", [super description]];
-//	
-//	for (NSObject *obj in self) {
-//		[content appendString:[NSString stringWithFormat:@"%@\n", obj]];
-//	}
-//	[content appendString:@"]"];
-//	
-//	return [content copy];
-//}
-
 - (NSString *)readableString
 {
 	NSMutableString *content = [NSMutableString stringWithFormat:@"%@ [\n", [self class]];
@@ -30,7 +17,7 @@
 	for (NSObject *obj in self) {
 		
 		NSArray *array = [obj.debugDescription componentsSeparatedByString:@"\n"];
-		NSMutableArray *mutableArray = [NSMutableArray array];
+		NSMutableArray *mutableArray = [NSMutableArray new];
 		
 		for (NSString *str in array) {
 			NSString *lineString = [@"\t" stringByAppendingString:str];
