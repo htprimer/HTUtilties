@@ -12,6 +12,12 @@
 
 - (instancetype)initWithDict:(NSDictionary *)dict;
 
+//convert to dict;
 - (NSDictionary *)propertyDict;
+
+// overwrite this method
+// if your property names don't match keys in dict
+// @{ propertyName : key }
++ (NSDictionary *)keyMapper;
 
 @end

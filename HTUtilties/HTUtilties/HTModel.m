@@ -52,6 +52,11 @@
 	return [propertyMeta copy];
 }
 
++ (NSDictionary *)keyMapper
+{
+	return nil;
+}
+
 + (NSDictionary *)propertyNameAttributes
 {
 	NSDictionary *dict = objc_getAssociatedObject(self, PropertyNameAttributesKey);
@@ -78,8 +83,18 @@
 
 - (void)setValue:(id)value forKey:(NSString *)key
 {
+	NSDictionary *mapper = [[self class] keyMapper];
+	
+	for (NSString *propertyName in mapper) {
+		if ([mapper[propertyName] isEqualToString:key]) {
+			key = propertyName;
+			break;
+		}
+	}
+	
 	NSDictionary *propertyMeta = [[self class] propertyNameAttributes];
 	HTPropertyAttributes *attribute = propertyMeta[key];
+	
 	if ([attribute.cls isSubclassOfClass:[HTModel class]] && [value isKindOfClass:[NSDictionary class]]) {
 		[self setValue:[[attribute.cls alloc] initWithDict:value] forKey:key];
 	} else {

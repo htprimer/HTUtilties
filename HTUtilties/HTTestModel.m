@@ -10,9 +10,9 @@
 
 @implementation HTTestModel
 
-+ (void)initialize
++ (NSDictionary *)keyMapper
 {
-
+	return @{@"name":@"extraKey"};
 }
 
 @end
