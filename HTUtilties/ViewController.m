@@ -13,6 +13,8 @@
 #import "HTTestModel.h"
 #import "HTBetaModel.h"
 
+#import "HTPickerView.h"
+
 @interface ViewController ()
 
 @property (nonatomic, weak) UIViewController *viewController;
@@ -41,8 +43,14 @@
 
 - (IBAction)pushScanVC:(id)sender {
 	
-	LeakViewController *vc = [[LeakViewController alloc] init];
-	[self.navigationController pushViewController:vc animated:YES];
+	HTPickerView *view = [HTPickerView new];
+	[view setConfirmHandler:^(NSString *value) {
+		NSLog(@"%@", value);;
+	}];
+	view.dataArray = @[@"1", @"2", @"3", @"4", @"5"];
+	[view show];
+	//LeakViewController *vc = [[LeakViewController alloc] init];
+	//[self.navigationController pushViewController:vc animated:YES];
 }
 
 
