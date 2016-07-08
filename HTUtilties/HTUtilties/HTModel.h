@@ -12,7 +12,7 @@
 
 - (instancetype)initWithDict:(NSDictionary *)dict;
 
-//convert to dict;
+//convert to dict without NSNull 
 - (NSDictionary *)propertyDict;
 
 // convert dict array to model array

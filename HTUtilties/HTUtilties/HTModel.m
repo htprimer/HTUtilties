@@ -131,7 +131,35 @@
 
 - (NSDictionary *)propertyDict
 {
-	return [self dictionaryWithValuesForKeys:[[self class] propertyNameAttributes].allKeys];
+	NSDictionary *modelDict = [self dictionaryWithValuesForKeys:[[self class] propertyNameAttributes].allKeys];
+	NSMutableDictionary *propertyDict = [NSMutableDictionary new];
+	[propertyDict setValuesForKeysWithDictionary:modelDict];   //去除nsnull对象
+	
+	NSMutableDictionary *mappedDict = [NSMutableDictionary new];
+	for (NSString *dictKey in propertyDict.allKeys) {
+		NSString *mappedKey = [[self class] keyMapper][dictKey]?:dictKey;
+		mappedDict[mappedKey] = propertyDict[dictKey];
+	}
+	return [mappedDict copy];
+}
+
+- (id)valueForKey:(NSString *)key
+{
+	NSDictionary *propertyMeta = [[self class] propertyNameAttributes];
+	HTPropertyAttributes *attribute = propertyMeta[key];
+	if ([attribute.cls isSubclassOfClass:[HTModel class]]) {
+		return [[super valueForKey:key] propertyDict];
+	} else if ([attribute.cls isSubclassOfClass:[NSArray class]]) {
+		NSDictionary *mapper = [[self class] arrayMapper];
+		Class cls = mapper[key];
+		if ([cls isSubclassOfClass:[HTModel class]]) {
+			return [cls modelArrayWithDictArray:[super valueForKey:key]];
+		} else {
+			return [super valueForKey:key];
+		}
+	} else {
+		return [super valueForKey:key];
+	}
 }
 
 - (NSString *)readableString
