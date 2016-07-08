@@ -45,6 +45,34 @@
 	NSLog(@"%@", model2);
 }
 
+- (void)testModelArray
+{
+	NSArray *dictArray = @[
+						   @{@"betaName":@"betaModel1"},
+						   @{@"betaName":@"betaModel2"},
+						   @{@"betaName":@"betaModel3"},
+						   @{@"betaName":@"betaModel4"}
+						   ];
+	NSDictionary *modelDict = @{
+								@"name":@"testModel",
+								@"array":dictArray,
+								};
+	HTTestModel *testModel = [[HTTestModel alloc] initWithDict:modelDict];
+	
+	NSLog(@"%@", testModel);
+	
+	XCTAssert(testModel.array);
+}
+
+- (void)testConvertToDict
+{
+	HTTestModel *testModel = [[HTTestModel alloc] init];
+	HTTestModel	*innerModel = [[HTTestModel alloc] initWithDict:@{@"name":@"innerModel"}];
+	testModel.model = innerModel;
+	NSDictionary *dict = [testModel propertyDict];
+	XCTAssert([dict[@"model"] isKindOfClass:[NSDictionary class]]);
+}
+
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{

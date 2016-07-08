@@ -7,12 +7,18 @@
 //
 
 #import "HTTestModel.h"
+#import "HTBetaModel.h"
 
 @implementation HTTestModel
 
 + (NSDictionary *)keyMapper
 {
 	return @{@"name":@"extraKey"};
+}
+
++ (NSDictionary *)arrayMapper
+{
+	return @{@"array":[HTBetaModel class]};
 }
 
 @end

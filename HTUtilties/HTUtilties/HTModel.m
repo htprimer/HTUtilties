@@ -28,8 +28,6 @@
 	unsigned count;
 	objc_property_t *propertyArray = class_copyPropertyList(self, &count);
 	for (int i = 0; i < count; i++) {
-		const char *name = property_getName(propertyArray[i]);
-		//const char *attributes = property_getAttributes(propertyArray[i]);
 		
 		HTPropertyAttributes *attribute = [HTPropertyAttributes new];
 		unsigned int attrCount;
@@ -45,6 +43,7 @@
 		}
 		free(attrs);
 		
+		const char *name = property_getName(propertyArray[i]);
 		propertyMeta[@(name)] = attribute;
 	}
 	free(propertyArray);
@@ -52,31 +51,45 @@
 	return [propertyMeta copy];
 }
 
-+ (NSDictionary *)keyMapper
-{
-	return nil;
-}
-
 + (NSDictionary *)propertyNameAttributes
 {
 	NSDictionary *dict = objc_getAssociatedObject(self, PropertyNameAttributesKey);
 	if (!dict) {
 		dict = [self propertyMeta];
-		[self setPropertyNameAttributes:dict];
+		objc_setAssociatedObject(self, PropertyNameAttributesKey, dict, OBJC_ASSOCIATION_COPY);
 	}
 	return dict;
 }
 
-+ (void)setPropertyNameAttributes:(NSDictionary *)dict
++ (NSDictionary *)keyMapper
 {
-	objc_setAssociatedObject(self, PropertyNameAttributesKey, dict, OBJC_ASSOCIATION_COPY);
+	return nil;
 }
 
++ (NSDictionary *)arrayMapper
+{
+	return nil;
+}
+
++ (NSArray<__kindof HTModel *> *)modelArrayWithDictArray:(NSArray<NSDictionary *> *)array
+{
+	NSMutableArray<HTModel *> * modelArray = [NSMutableArray new];
+	for (NSDictionary *dict in array) {
+		HTModel *model = [[self alloc] initWithDict:dict];
+		[modelArray addObject:model];
+	}
+	return [modelArray copy];
+}
+
+
+#pragma mark - member method
 - (instancetype)initWithDict:(NSDictionary *)dict
 {
-	if (![dict isKindOfClass:[NSDictionary class]]) return nil;
+	//if (![dict isKindOfClass:[NSDictionary class]]) return nil;
 	if (self = [super init]) {
-		[self setValuesForKeysWithDictionary:dict];
+		if ([dict isKindOfClass:[NSDictionary class]]) {
+			[self setValuesForKeysWithDictionary:dict];
+		}
 	}
 	return self;
 }
@@ -84,7 +97,6 @@
 - (void)setValue:(id)value forKey:(NSString *)key
 {
 	NSDictionary *mapper = [[self class] keyMapper];
-	
 	for (NSString *propertyName in mapper) {
 		if ([mapper[propertyName] isEqualToString:key]) {
 			key = propertyName;
@@ -96,7 +108,22 @@
 	HTPropertyAttributes *attribute = propertyMeta[key];
 	
 	if ([attribute.cls isSubclassOfClass:[HTModel class]] && [value isKindOfClass:[NSDictionary class]]) {
+		
 		[self setValue:[[attribute.cls alloc] initWithDict:value] forKey:key];
+		
+	} else if ([attribute.cls isSubclassOfClass:[NSArray class]] && [value isKindOfClass:[NSArray class]]) {
+		
+		NSDictionary *mapper = [[self class] arrayMapper];
+		Class cls = mapper[key];
+		if ([cls isSubclassOfClass:[HTModel class]]) {
+			
+			NSArray *modelArray = [cls modelArrayWithDictArray:value];
+			[super setValue:modelArray forKey:key];
+			
+		} else {
+			[super setValue:value forKey:key];
+		}
+		
 	} else {
 		[super setValue:value forKey:key];
 	}

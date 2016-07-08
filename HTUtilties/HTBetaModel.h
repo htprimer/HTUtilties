@@ -10,6 +10,6 @@
 
 @interface HTBetaModel : HTModel
 
-@property (nonatomic, copy) NSString *secondName;
+@property (nonatomic, copy) NSString *betaName;
 
 @end
