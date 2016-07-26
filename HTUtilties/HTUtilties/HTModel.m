@@ -73,12 +73,21 @@
 
 + (NSArray<__kindof HTModel *> *)modelArrayWithDictArray:(NSArray<NSDictionary *> *)array
 {
-	NSMutableArray<HTModel *> * modelArray = [NSMutableArray new];
+	NSMutableArray<HTModel *> *modelArray = [NSMutableArray new];
 	for (NSDictionary *dict in array) {
 		HTModel *model = [[self alloc] initWithDict:dict];
 		[modelArray addObject:model];
 	}
 	return [modelArray copy];
+}
+
++ (NSArray<NSDictionary *> *)dictArrayWithModelArray:(NSArray<__kindof HTModel *> *)array
+{
+	NSMutableArray<NSDictionary *> *dictArray = [NSMutableArray new];
+	for (HTModel *model in array) {
+		[dictArray addObject:[model propertyDict]];
+	}
+	return [dictArray copy];
 }
 
 
@@ -153,7 +162,7 @@
 		NSDictionary *mapper = [[self class] arrayMapper];
 		Class cls = mapper[key];
 		if ([cls isSubclassOfClass:[HTModel class]]) {
-			return [cls modelArrayWithDictArray:[super valueForKey:key]];
+			return [cls dictArrayWithModelArray:[super valueForKey:key]];
 		} else {
 			return [super valueForKey:key];
 		}

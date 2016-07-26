@@ -16,7 +16,10 @@
 - (NSDictionary *)propertyDict;
 
 // convert dict array to model array
-+ (NSArray<__kindof HTModel *> *)modelArrayWithDictArray:(NSArray<NSDictionary *> *)dict;
++ (NSArray<__kindof HTModel *> *)modelArrayWithDictArray:(NSArray<NSDictionary *> *)array;
+
+// convert model array to dict array
++ (NSArray<NSDictionary *> *)dictArrayWithModelArray:(NSArray<__kindof HTModel *> *)array;
 
 // overwrite this method
 // if your property names don't match keys in dict

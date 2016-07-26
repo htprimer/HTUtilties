@@ -10,6 +10,7 @@
 #import "HTModel.h"
 #import "HTTestModel.h"
 #import "HTBetaModel.h"
+#import "HTTestKVCModel.h"
 
 @interface HTUtiltiesTests : XCTestCase
 
@@ -71,6 +72,16 @@
 	testModel.model = innerModel;
 	NSDictionary *dict = [testModel propertyDict];
 	XCTAssert([dict[@"model"] isKindOfClass:[NSDictionary class]]);
+}
+
+- (void)testDictToJson
+{
+	HTTestKVCModel *model = [HTTestKVCModel new];
+	model.aBoolProperty = YES;
+	model.aIntegerProperty = 1;
+	NSNumber *number = [model valueForKey:@"aBoolProperty"];
+	NSLog(@"%@", model);
+	NSLog(@"%@", [number class]);
 }
 
 - (void)testPerformanceExample {
