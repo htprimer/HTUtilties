@@ -11,6 +11,8 @@
 #import "HTTestModel.h"
 #import "HTBetaModel.h"
 #import "HTTestKVCModel.h"
+#import "UIControl+HTBlock.h"
+#import "NSObject+HTDebug.h"
 
 @interface HTUtiltiesTests : XCTestCase
 
@@ -82,6 +84,38 @@
 	NSNumber *number = [model valueForKey:@"aBoolProperty"];
 	NSLog(@"%@", model);
 	NSLog(@"%@", [number class]);
+}
+
+- (void)testBlockHandler
+{
+	UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+	[button addHandler:^{
+		NSLog(@"%@", @"button clicked");
+	} forEvent:UIControlEventAllEvents];
+	[button sendActionsForControlEvents:UIControlEventAllEvents];
+}
+
+#define NSString(str) @#str
+
+- (void)testMacro
+{
+	CGPoint point = CGPointMake(0, 0);
+	char *typeName = @encode(__typeof__(point));
+}
+
+- (void)testObjectDebug
+{
+	NSMutableDictionary *dict = [NSMutableDictionary new];
+	[dict setHt_debugBlock:^(NSObject *obj) {
+		NSLog(@"%@ delloc", obj);
+	}];
+	
+	NSObject *obj = [NSObject new];
+	[obj setHt_debugBlock:^(NSObject *obj) {
+		NSLog(@"%@", obj);
+	}];
+	
+	[dict setObject:obj forKey:@__STRING(obj)];
 }
 
 - (void)testPerformanceExample {

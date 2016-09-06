@@ -12,13 +12,15 @@
 #import "LeakViewController.h"
 #import "HTTestModel.h"
 #import "HTBetaModel.h"
-
+#import "UIControl+HTBlock.h"
 #import "HTPickerView.h"
 
 @interface ViewController ()
 
 @property (nonatomic, weak) UIViewController *viewController;
 
+@property (weak, nonatomic) IBOutlet UIControl *testControl;
+@property (weak, nonatomic) IBOutlet UIButton *scanButton;
 @end
 
 @implementation ViewController
@@ -26,19 +28,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-//	HTTestModel *model1 = [[HTTestModel alloc] init];
-//	model1.name = @"model1";
-//	model1.height = 38;
-//	model1.dict = @{@"key":@"value"};
-//	NSLog(@"%@", model1);
-//	
-//	HTBetaModel *model2 = [[HTBetaModel alloc] init];
-//	model2.secondName = @"model2";
-//	NSLog(@"%@", model2);
-//	
-//	HTBetaModel *model3 = [[HTBetaModel alloc] init];
-//	model3.secondName = @"model3";
-//	NSLog(@"%@", model3);
+	[self.scanButton addHandler:^{
+		NSLog(@"%@", @"scanButton clicked");
+	} forEvent:UIControlEventTouchUpInside];
+	
+	[self.testControl addHandler:^{
+		NSLog(@"%@", @"control clicked");
+	} forEvent:UIControlEventTouchUpInside];
 }
 
 - (IBAction)pushScanVC:(id)sender {
@@ -53,7 +49,13 @@
 	//[self.navigationController pushViewController:vc animated:YES];
 }
 
+- (IBAction)testUIControlBlock:(id)sender {
+	NSLog(@"%@", @"scanButton clicked via delegate");
+}
 
+- (IBAction)controlglock:(id)sender {
+		NSLog(@"%@", @"control clicked via delegate");
+}
 
 
 @end

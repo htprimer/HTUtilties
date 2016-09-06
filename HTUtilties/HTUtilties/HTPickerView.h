@@ -14,6 +14,8 @@
 
 @property (nonatomic, copy) void (^confirmHandler)(NSString *value);
 
+@property (nonatomic, copy) void (^dismissHandler)();
+
 - (void)show;
 
 @end

@@ -7,9 +7,10 @@
 //
 
 #import "HTPickerView.h"
+#import "UIView+Frame.h"
 #import "Masonry.h"
 
-#define PickerViewHeight 210
+#define PickerViewHeight 250
 
 @interface HTPickerView ()<UIPickerViewDelegate, UIPickerViewDataSource>
 {
@@ -33,7 +34,7 @@
 			make.leading.equalTo(self);
 			make.trailing.equalTo(self);
 			make.bottom.equalTo(self);
-			make.height.mas_equalTo(PickerViewHeight);
+			//make.height.mas_equalTo(PickerViewHeight);
 		}];
 		
 		_cancelButton = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -79,10 +80,11 @@
 
 - (void)hide
 {
+	if (self.dismissHandler) {
+		self.dismissHandler();
+	}
 	[UIView animateWithDuration:0.15 animations:^{
-		_pickerView.transform = CGAffineTransformMakeTranslation(0, PickerViewHeight);
-		_confirmButton.transform = CGAffineTransformMakeTranslation(0, PickerViewHeight);
-		_cancelButton.transform = CGAffineTransformMakeTranslation(0, PickerViewHeight);
+		self.transform = CGAffineTransformMakeTranslation(0, PickerViewHeight);
 		self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
 	} completion:^(BOOL finished) {
 		[self removeFromSuperview];
@@ -97,16 +99,12 @@
 	UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
 	[keyWindow addSubview:self];
 	self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
-	self.frame = keyWindow.bounds;
-	
-	_pickerView.transform = CGAffineTransformMakeTranslation(0, PickerViewHeight);
-	_confirmButton.transform = CGAffineTransformMakeTranslation(0, PickerViewHeight);
-	_cancelButton.transform = CGAffineTransformMakeTranslation(0, PickerViewHeight);
+    self.frame = CGRectMake(0, -PickerViewHeight, keyWindow.width, keyWindow.height+PickerViewHeight);
+	self.transform = CGAffineTransformMakeTranslation(0, PickerViewHeight);
+
 	[UIView animateWithDuration:0.15 animations:^{
 		self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
-		_pickerView.transform = CGAffineTransformIdentity;
-		_confirmButton.transform = CGAffineTransformIdentity;
-		_cancelButton.transform = CGAffineTransformIdentity;
+		self.transform = CGAffineTransformIdentity;
 	}];
 }
 
