@@ -30,6 +30,7 @@
 		52B098ED1D3DD113000E01BE /* HTTestKVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B098EC1D3DD113000E01BE /* HTTestKVCModel.m */; };
 		52B68EAA1CCE1B8600F7A086 /* NSArray+HTDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B68EA91CCE1B8600F7A086 /* NSArray+HTDebug.m */; };
 		52B9CF881CC8C0BC003BCB03 /* UIView+HTDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B9CF871CC8C0BC003BCB03 /* UIView+HTDebug.m */; };
+		52CB8EC81E652293008F4976 /* UIAlertView+HTBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CB8EC71E652293008F4976 /* UIAlertView+HTBlock.m */; };
 		52E6B3301D4714A60044F15A /* UIControl+HTBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E6B32F1D4714A60044F15A /* UIControl+HTBlock.m */; };
 		52F220951CA3CF19007671FD /* HTBlockTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F220941CA3CF19007671FD /* HTBlockTableView.m */; };
 		52F2209A1CA3CF20007671FD /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F220971CA3CF20007671FD /* UIView+Frame.m */; };
@@ -104,6 +105,8 @@
 		52B9CF831CC77567003BCB03 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		52B9CF861CC8C0BC003BCB03 /* UIView+HTDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HTDebug.h"; sourceTree = "<group>"; };
 		52B9CF871CC8C0BC003BCB03 /* UIView+HTDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HTDebug.m"; sourceTree = "<group>"; };
+		52CB8EC61E652293008F4976 /* UIAlertView+HTBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+HTBlock.h"; sourceTree = "<group>"; };
+		52CB8EC71E652293008F4976 /* UIAlertView+HTBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+HTBlock.m"; sourceTree = "<group>"; };
 		52E6B32E1D4714A60044F15A /* UIControl+HTBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+HTBlock.h"; sourceTree = "<group>"; };
 		52E6B32F1D4714A60044F15A /* UIControl+HTBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+HTBlock.m"; sourceTree = "<group>"; };
 		52F220921CA3CF12007671FD /* HTMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMacro.h; sourceTree = "<group>"; };
@@ -291,6 +294,8 @@
 				52397EA41D7EB79100809E81 /* NSObject+HTDebug.m */,
 				52F220961CA3CF20007671FD /* UIView+Frame.h */,
 				52F220971CA3CF20007671FD /* UIView+Frame.m */,
+				52CB8EC61E652293008F4976 /* UIAlertView+HTBlock.h */,
+				52CB8EC71E652293008F4976 /* UIAlertView+HTBlock.m */,
 				52F220981CA3CF20007671FD /* UIView+HTInspectable.h */,
 				52F220991CA3CF20007671FD /* UIView+HTInspectable.m */,
 				52B9CF861CC8C0BC003BCB03 /* UIView+HTDebug.h */,
@@ -504,6 +509,7 @@
 				523E4FD91D07D0BE00AF8155 /* HTBetaModel.m in Sources */,
 				52E6B3301D4714A60044F15A /* UIControl+HTBlock.m in Sources */,
 				52B9CF881CC8C0BC003BCB03 /* UIView+HTDebug.m in Sources */,
+				52CB8EC81E652293008F4976 /* UIAlertView+HTBlock.m in Sources */,
 				52A726281D05CD7C00072F20 /* LeakViewController.m in Sources */,
 				5267E6631CAA205700008484 /* GMBQRCodeScan.m in Sources */,
 				52187A371CA0F1F30002FEF8 /* ViewController.m in Sources */,

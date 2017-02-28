@@ -53,12 +53,17 @@
 
 + (NSDictionary *)propertyNameAttributes
 {
-	NSDictionary *dict = objc_getAssociatedObject(self, PropertyNameAttributesKey);
-	if (!dict) {
-		dict = [self propertyMeta];
+   	NSDictionary *dict = objc_getAssociatedObject(self, PropertyNameAttributesKey);
+    if (!dict) {
+        dict = [self propertyMeta];
 		objc_setAssociatedObject(self, PropertyNameAttributesKey, dict, OBJC_ASSOCIATION_COPY);
-	}
-	return dict;
+    }
+    NSMutableDictionary *allProperty = [dict mutableCopy];
+    if ([[self superclass] isSubclassOfClass:[HTModel class]]) {
+        NSDictionary *superProperty = [[self superclass] propertyNameAttributes];
+        [allProperty setValuesForKeysWithDictionary:superProperty];
+    }
+    return [allProperty copy];
 }
 
 + (NSDictionary *)keyMapper
@@ -70,12 +75,17 @@
 {
 	return nil;
 }
-
++ (Class)arrayItemClassMapper:(NSDictionary *)dict
+{
+    return self;
+}
 + (NSArray<__kindof HTModel *> *)modelArrayWithDictArray:(NSArray<NSDictionary *> *)array
 {
 	NSMutableArray<HTModel *> *modelArray = [NSMutableArray new];
 	for (NSDictionary *dict in array) {
-		HTModel *model = [[self alloc] initWithDict:dict];
+        Class aClass = [self arrayItemClassMapper:dict];
+        aClass = aClass ?: self;
+		HTModel *model = [[aClass alloc] initWithDict:dict];
 		[modelArray addObject:model];
 	}
 	return [modelArray copy];
@@ -134,6 +144,11 @@
 		}
 		
 	} else {
+		if (!attribute.cls && ![value isKindOfClass:[NSValue class]]) {
+			if ([value isKindOfClass:[NSString class]]) {
+				value = @([value doubleValue]);
+			}
+		}
 		[super setValue:value forKey:key];
 	}
 }
@@ -203,7 +218,7 @@
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
-	NSLog(@"undefinedKey %@, value %@", key, value);
+	//NSLog(@"undefinedKey %@, value %@", key, value);
 }
 
 - (NSString *)description

@@ -31,4 +31,7 @@
 // @{ propertyName : class }
 + (NSDictionary *)arrayMapper;
 
+
++ (Class)arrayItemClassMapper:(NSDictionary *)dict;
+
 @end

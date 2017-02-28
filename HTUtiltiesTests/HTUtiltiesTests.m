@@ -86,6 +86,14 @@
 	NSLog(@"%@", [number class]);
 }
 
+- (void)testKVC
+{
+	HTTestModel *model = [HTTestModel new];
+	NSString *str = [NSString stringWithUTF8String:"123"];
+	[model setValue:str forKey:@"longProperty"];
+	
+}
+
 - (void)testBlockHandler
 {
 	UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];

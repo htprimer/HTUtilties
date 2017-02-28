@@ -22,4 +22,7 @@
 
 @property (nonatomic, assign) float height;
 
+@property (nonatomic, assign) long long longProperty;
+
+
 @end
