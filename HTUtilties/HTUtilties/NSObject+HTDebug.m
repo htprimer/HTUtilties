@@ -9,12 +9,13 @@
 
 #import "NSObject+HTDebug.h"
 #import <objc/runtime.h>
+#import <objc/objc.h>
 
 #define DebugBlockKey @"DebugBlock"
 
 @implementation NSObject (HTDebug)
 
-#ifdef DEBUG
+#if 0
 + (void)load
 {
 	Method deallocMethod = class_getInstanceMethod([self class], NSSelectorFromString(@"dealloc"));
@@ -41,6 +42,13 @@
 		self.ht_debugBlock(self);
 	}
 	[self debugDealloc];
+}
+
+- (void)changeClassName:(NSString *)name
+{
+	Class cls = objc_allocateClassPair([self class], [name cStringUsingEncoding:NSUTF8StringEncoding], 0);
+	objc_registerClassPair(cls);
+	object_setClass(self, cls);
 }
 
 @end

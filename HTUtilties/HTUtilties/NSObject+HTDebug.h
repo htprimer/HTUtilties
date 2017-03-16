@@ -14,4 +14,6 @@
 @property (nonatomic, copy) void (^ht_debugBlock)(NSObject *obj);
 #endif
 
+- (void)changeClassName:(NSString *)name;
+
 @end

@@ -14,6 +14,7 @@
 #import "HTBetaModel.h"
 #import "UIControl+HTBlock.h"
 #import "HTPickerView.h"
+#import "NSObject+HTDebug.h"
 
 @interface ViewController ()
 
@@ -27,6 +28,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	UIView *view = [UIView new];
+	[view changeClassName:@"NewClassName"];
 	
 	[self.scanButton addHandler:^{
 		NSLog(@"%@", @"scanButton clicked");
