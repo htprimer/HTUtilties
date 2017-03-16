@@ -14,14 +14,12 @@
 #import "HTBetaModel.h"
 #import "UIControl+HTBlock.h"
 #import "HTPickerView.h"
+#import "NSObject+HTDebug.h"
 #import <Masonry.h>
 
 @interface ViewController ()
 
 @property (nonatomic, weak) UIViewController *viewController;
-
-@property (weak, nonatomic) IBOutlet UIControl *testControl;
-@property (weak, nonatomic) IBOutlet UIButton *scanButton;
 
 @property (nonatomic) UIView *testMasonryView;
 @end

@@ -16,34 +16,6 @@
 
 @implementation NSObject (HTDebug)
 
-#if 0
-+ (void)load
-{
-//	Method deallocMethod = class_getInstanceMethod(self, NSSelectorFromString(@"dealloc"));
-//	Method debugDeallocMethod = class_getInstanceMethod(self, @selector(debugDealloc));
-//	method_exchangeImplementations(deallocMethod, debugDeallocMethod);
-}
-#endif
-
-- (void)setHt_debugBlock:(void (^)(NSObject *obj))ht_debugBlock
-{
-	objc_setAssociatedObject(self, DebugBlockKey, ht_debugBlock, OBJC_ASSOCIATION_COPY);
-}
-
-- (void (^)(NSObject *obj))ht_debugBlock
-{
-	void (^block)() = objc_getAssociatedObject(self, DebugBlockKey);
-	return block;
-}
-
-- (void)debugDealloc
-{
-	if (self.ht_debugBlock) {
-		self.ht_debugBlock(self);
-	}
-	[self debugDealloc];
-}
-
 - (void)setHt_tempDescription:(NSString *)ht_tempDescription
 {
 	static dispatch_once_t onceToken;
@@ -63,6 +35,13 @@
 	} else {
 		return [self ht_tempDescription];
 	}
+}
+
+- (void)changeClassName:(NSString *)name
+{
+	Class cls = objc_allocateClassPair([self class], [name cStringUsingEncoding:NSUTF8StringEncoding], 0);
+	objc_registerClassPair(cls);
+	object_setClass(self, cls);
 }
 
 @end
