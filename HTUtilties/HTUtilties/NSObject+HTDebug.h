@@ -19,4 +19,6 @@
 
 #endif
 
+- (void)changeClassName:(NSString *)name;
+
 @end

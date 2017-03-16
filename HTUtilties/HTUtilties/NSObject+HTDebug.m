@@ -9,13 +9,14 @@
 
 #import "NSObject+HTDebug.h"
 #import <objc/runtime.h>
+#import <objc/objc.h>
 
 #define DebugBlockKey @"DebugBlock"
 #define TempDescKey	@"TempDesc"
 
 @implementation NSObject (HTDebug)
 
-#ifdef DEBUG
+#if 0
 + (void)load
 {
 //	Method deallocMethod = class_getInstanceMethod(self, NSSelectorFromString(@"dealloc"));
