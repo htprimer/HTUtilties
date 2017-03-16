@@ -9,11 +9,12 @@
 #import "ViewController.h"
 #import "GMBQRCodeScan.h"
 #import "QRCodeScanViewController.h"
-#import "LeakViewController.h"
+#import "NSObject+HTDebug.h"
 #import "HTTestModel.h"
 #import "HTBetaModel.h"
 #import "UIControl+HTBlock.h"
 #import "HTPickerView.h"
+#import <Masonry.h>
 
 @interface ViewController ()
 
@@ -21,41 +22,29 @@
 
 @property (weak, nonatomic) IBOutlet UIControl *testControl;
 @property (weak, nonatomic) IBOutlet UIButton *scanButton;
+
+@property (nonatomic) UIView *testMasonryView;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.navigationController.navigationBarHidden = YES;
 	
-	[self.scanButton addHandler:^{
-		NSLog(@"%@", @"scanButton clicked");
-	} forEvent:UIControlEventTouchUpInside];
-	
-	[self.testControl addHandler:^{
-		NSLog(@"%@", @"control clicked");
-	} forEvent:UIControlEventTouchUpInside];
-}
-
-- (IBAction)pushScanVC:(id)sender {
-	
-	HTPickerView *view = [HTPickerView new];
-	[view setConfirmHandler:^(NSString *value) {
-		NSLog(@"%@", value);;
+	self.testMasonryView = [UIView new];
+	HTVarNameDesc(self.testMasonryView);
+	self.testMasonryView.backgroundColor = [UIColor orangeColor];
+	[self.view addSubview:self.testMasonryView];
+	[self.testMasonryView mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.width.height.equalTo(@50);
+		make.center.equalTo(self.view);
 	}];
-	view.dataArray = @[@"1", @"2", @"3", @"4", @"5"];
-	[view show];
-	//LeakViewController *vc = [[LeakViewController alloc] init];
-	//[self.navigationController pushViewController:vc animated:YES];
+	[self.testMasonryView removeFromSuperview];
+	
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[self.view addSubview:self.testMasonryView];
+	});
 }
-
-- (IBAction)testUIControlBlock:(id)sender {
-	NSLog(@"%@", @"scanButton clicked via delegate");
-}
-
-- (IBAction)controlglock:(id)sender {
-		NSLog(@"%@", @"control clicked via delegate");
-}
-
 
 @end

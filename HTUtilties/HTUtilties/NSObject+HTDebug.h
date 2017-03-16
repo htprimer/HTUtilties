@@ -11,7 +11,12 @@
 @interface NSObject (HTDebug)
 
 #ifdef DEBUG
+
+#define HTVarNameDesc(var) var.ht_tempDescription = @__STRING(var)
+
 @property (nonatomic, copy) void (^ht_debugBlock)(NSObject *obj);
+@property (nonatomic, copy) NSString *ht_tempDescription;
+
 #endif
 
 @end

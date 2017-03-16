@@ -25,13 +25,13 @@
 		528A5A621D01813200D6A50C /* HTModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 528A5A611D01813200D6A50C /* HTModel.m */; };
 		528A5A651D01864E00D6A50C /* HTTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 528A5A641D01864E00D6A50C /* HTTestModel.m */; };
 		529B4C661D780FDF0035FD62 /* HTStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529B4C651D780FDF0035FD62 /* HTStackView.m */; };
-		52A726281D05CD7C00072F20 /* LeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A726271D05CD7C00072F20 /* LeakViewController.m */; };
 		52A7AC671D66B37100A0859F /* HTPerformanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A7AC661D66B37100A0859F /* HTPerformanceTests.m */; };
 		52B098ED1D3DD113000E01BE /* HTTestKVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B098EC1D3DD113000E01BE /* HTTestKVCModel.m */; };
 		52B68EAA1CCE1B8600F7A086 /* NSArray+HTDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B68EA91CCE1B8600F7A086 /* NSArray+HTDebug.m */; };
 		52B9CF881CC8C0BC003BCB03 /* UIView+HTDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B9CF871CC8C0BC003BCB03 /* UIView+HTDebug.m */; };
 		52CB8EC81E652293008F4976 /* UIAlertView+HTBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CB8EC71E652293008F4976 /* UIAlertView+HTBlock.m */; };
 		52E6B3301D4714A60044F15A /* UIControl+HTBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E6B32F1D4714A60044F15A /* UIControl+HTBlock.m */; };
+		52E788311E67149100DC5514 /* HTDebugTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E788301E67149100DC5514 /* HTDebugTests.m */; };
 		52F220951CA3CF19007671FD /* HTBlockTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F220941CA3CF19007671FD /* HTBlockTableView.m */; };
 		52F2209A1CA3CF20007671FD /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F220971CA3CF20007671FD /* UIView+Frame.m */; };
 		52F2209B1CA3CF20007671FD /* UIView+HTInspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F220991CA3CF20007671FD /* UIView+HTInspectable.m */; };
@@ -95,8 +95,6 @@
 		528A5A641D01864E00D6A50C /* HTTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTestModel.m; sourceTree = "<group>"; };
 		529B4C641D780FDF0035FD62 /* HTStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTStackView.h; sourceTree = "<group>"; };
 		529B4C651D780FDF0035FD62 /* HTStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTStackView.m; sourceTree = "<group>"; };
-		52A726261D05CD7C00072F20 /* LeakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeakViewController.h; sourceTree = "<group>"; };
-		52A726271D05CD7C00072F20 /* LeakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeakViewController.m; sourceTree = "<group>"; };
 		52A7AC661D66B37100A0859F /* HTPerformanceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPerformanceTests.m; sourceTree = "<group>"; };
 		52B098EB1D3DD113000E01BE /* HTTestKVCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTestKVCModel.h; sourceTree = "<group>"; };
 		52B098EC1D3DD113000E01BE /* HTTestKVCModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTestKVCModel.m; sourceTree = "<group>"; };
@@ -109,6 +107,7 @@
 		52CB8EC71E652293008F4976 /* UIAlertView+HTBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+HTBlock.m"; sourceTree = "<group>"; };
 		52E6B32E1D4714A60044F15A /* UIControl+HTBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+HTBlock.h"; sourceTree = "<group>"; };
 		52E6B32F1D4714A60044F15A /* UIControl+HTBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+HTBlock.m"; sourceTree = "<group>"; };
+		52E788301E67149100DC5514 /* HTDebugTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTDebugTests.m; sourceTree = "<group>"; };
 		52F220921CA3CF12007671FD /* HTMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMacro.h; sourceTree = "<group>"; };
 		52F220931CA3CF19007671FD /* HTBlockTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTBlockTableView.h; sourceTree = "<group>"; };
 		52F220941CA3CF19007671FD /* HTBlockTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTBlockTableView.m; sourceTree = "<group>"; };
@@ -204,8 +203,6 @@
 				52187A331CA0F1F30002FEF8 /* AppDelegate.m */,
 				52187A351CA0F1F30002FEF8 /* ViewController.h */,
 				52187A361CA0F1F30002FEF8 /* ViewController.m */,
-				52A726261D05CD7C00072F20 /* LeakViewController.h */,
-				52A726271D05CD7C00072F20 /* LeakViewController.m */,
 				52187A381CA0F1F30002FEF8 /* Main.storyboard */,
 				52187A3B1CA0F1F30002FEF8 /* Assets.xcassets */,
 				52187A3D1CA0F1F30002FEF8 /* LaunchScreen.storyboard */,
@@ -228,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				52187A491CA0F1F30002FEF8 /* HTUtiltiesTests.m */,
+				52E788301E67149100DC5514 /* HTDebugTests.m */,
 				52A7AC661D66B37100A0859F /* HTPerformanceTests.m */,
 				52187A4B1CA0F1F30002FEF8 /* Info.plist */,
 			);
@@ -510,7 +508,6 @@
 				52E6B3301D4714A60044F15A /* UIControl+HTBlock.m in Sources */,
 				52B9CF881CC8C0BC003BCB03 /* UIView+HTDebug.m in Sources */,
 				52CB8EC81E652293008F4976 /* UIAlertView+HTBlock.m in Sources */,
-				52A726281D05CD7C00072F20 /* LeakViewController.m in Sources */,
 				5267E6631CAA205700008484 /* GMBQRCodeScan.m in Sources */,
 				52187A371CA0F1F30002FEF8 /* ViewController.m in Sources */,
 				52397EA51D7EB79100809E81 /* NSObject+HTDebug.m in Sources */,
@@ -534,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52A7AC671D66B37100A0859F /* HTPerformanceTests.m in Sources */,
+				52E788311E67149100DC5514 /* HTDebugTests.m in Sources */,
 				52187A4A1CA0F1F30002FEF8 /* HTUtiltiesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
