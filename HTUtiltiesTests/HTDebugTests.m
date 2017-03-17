@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "NSObject+HTDebug.h"
+#import "HTCodeToolPrototype.h"
 
 @interface HTDebugTests : XCTestCase
 
@@ -35,8 +36,51 @@
 
 - (void)testDebugDesc
 {
-
+	Block a = ^ id(id obj) {
+		NSLog(@"%@", @"a");
+		if (obj) {
+			Block block = obj;
+			block(nil);
+		}
+		return nil;
+	};
+	[a changeClassName:@"a"];
 	
+	Block b = ^ id(id obj) {
+		NSLog(@"%@", @"b");
+		if (obj) {
+			Block block = obj;
+			block(nil);
+		}
+		return nil;
+	};
+	[b changeClassName:@"b"];
+	
+	Block c = ^ id(id obj) {
+		NSLog(@"%@", @"c");
+		if (obj) {
+			Block block = obj;
+			block(nil);
+		}
+		return nil;
+	};
+	[c changeClassName:@"c"];
+	
+	HTCodeToolPrototype *tool = [HTCodeToolPrototype new];
+	Block result = [tool combineBlock:@[a,b,c]];
+	result(nil);
+	
+	tool.then(nil);
+	
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		NSLog(@"%@", @1);
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+			NSLog(@"%@", @2);
+			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+				NSLog(@"%@", @3);
+			});
+		});
+	});
 }
 
 @end

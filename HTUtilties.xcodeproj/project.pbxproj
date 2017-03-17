@@ -15,12 +15,12 @@
 		52187A3A1CA0F1F30002FEF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52187A381CA0F1F30002FEF8 /* Main.storyboard */; };
 		52187A3C1CA0F1F30002FEF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52187A3B1CA0F1F30002FEF8 /* Assets.xcassets */; };
 		52187A3F1CA0F1F30002FEF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52187A3D1CA0F1F30002FEF8 /* LaunchScreen.storyboard */; };
-		52187A4A1CA0F1F30002FEF8 /* HTUtiltiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52187A491CA0F1F30002FEF8 /* HTUtiltiesTests.m */; };
 		52187A551CA0F1F30002FEF8 /* HTUtiltiesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52187A541CA0F1F30002FEF8 /* HTUtiltiesUITests.m */; };
 		52397EA51D7EB79100809E81 /* NSObject+HTDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 52397EA41D7EB79100809E81 /* NSObject+HTDebug.m */; };
 		52397EAB1D7EEA5300809E81 /* HTPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52397EAA1D7EEA5300809E81 /* HTPickerView.m */; };
 		5267E6631CAA205700008484 /* GMBQRCodeScan.m in Sources */ = {isa = PBXBuildFile; fileRef = 5267E6621CAA205700008484 /* GMBQRCodeScan.m */; };
 		528A5A621D01813200D6A50C /* HTModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 528A5A611D01813200D6A50C /* HTModel.m */; };
+		529B1A311E7BD18800C9ABD4 /* HTCodeToolPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 529B1A301E7BD18800C9ABD4 /* HTCodeToolPrototype.m */; };
 		529B4C661D780FDF0035FD62 /* HTStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529B4C651D780FDF0035FD62 /* HTStackView.m */; };
 		52A7AC671D66B37100A0859F /* HTPerformanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A7AC661D66B37100A0859F /* HTPerformanceTests.m */; };
 		52B68EAA1CCE1B8600F7A086 /* NSArray+HTDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B68EA91CCE1B8600F7A086 /* NSArray+HTDebug.m */; };
@@ -69,7 +69,6 @@
 		52187A3E1CA0F1F30002FEF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52187A401CA0F1F30002FEF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52187A451CA0F1F30002FEF8 /* HTUtiltiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTUtiltiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		52187A491CA0F1F30002FEF8 /* HTUtiltiesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTUtiltiesTests.m; sourceTree = "<group>"; };
 		52187A4B1CA0F1F30002FEF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52187A501CA0F1F30002FEF8 /* HTUtiltiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTUtiltiesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52187A541CA0F1F30002FEF8 /* HTUtiltiesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTUtiltiesUITests.m; sourceTree = "<group>"; };
@@ -82,6 +81,8 @@
 		5267E6621CAA205700008484 /* GMBQRCodeScan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMBQRCodeScan.m; sourceTree = "<group>"; };
 		528A5A601D01813200D6A50C /* HTModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTModel.h; sourceTree = "<group>"; };
 		528A5A611D01813200D6A50C /* HTModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTModel.m; sourceTree = "<group>"; };
+		529B1A2F1E7BD18800C9ABD4 /* HTCodeToolPrototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCodeToolPrototype.h; sourceTree = "<group>"; };
+		529B1A301E7BD18800C9ABD4 /* HTCodeToolPrototype.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCodeToolPrototype.m; sourceTree = "<group>"; };
 		529B4C641D780FDF0035FD62 /* HTStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTStackView.h; sourceTree = "<group>"; };
 		529B4C651D780FDF0035FD62 /* HTStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTStackView.m; sourceTree = "<group>"; };
 		52A7AC661D66B37100A0859F /* HTPerformanceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPerformanceTests.m; sourceTree = "<group>"; };
@@ -199,7 +200,6 @@
 		52187A481CA0F1F30002FEF8 /* HTUtiltiesTests */ = {
 			isa = PBXGroup;
 			children = (
-				52187A491CA0F1F30002FEF8 /* HTUtiltiesTests.m */,
 				52E788301E67149100DC5514 /* HTDebugTests.m */,
 				52A7AC661D66B37100A0859F /* HTPerformanceTests.m */,
 				52187A4B1CA0F1F30002FEF8 /* Info.plist */,
@@ -234,9 +234,19 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		529B1A2E1E7BD01200C9ABD4 /* CodeTool */ = {
+			isa = PBXGroup;
+			children = (
+				529B1A2F1E7BD18800C9ABD4 /* HTCodeToolPrototype.h */,
+				529B1A301E7BD18800C9ABD4 /* HTCodeToolPrototype.m */,
+			);
+			name = CodeTool;
+			sourceTree = "<group>";
+		};
 		52F220811CA3CDBD007671FD /* HTUtilties */ = {
 			isa = PBXGroup;
 			children = (
+				529B1A2E1E7BD01200C9ABD4 /* CodeTool */,
 				528A5A5F1D01811700D6A50C /* Model */,
 				5267E6661CAA6BF900008484 /* Control */,
 				52F220911CA3CEF5007671FD /* Macro */,
@@ -485,6 +495,7 @@
 				52F2209B1CA3CF20007671FD /* UIView+HTInspectable.m in Sources */,
 				52013CB31CD0C34B00E4B7F8 /* UIControl+HTDebug.m in Sources */,
 				52187A341CA0F1F30002FEF8 /* AppDelegate.m in Sources */,
+				529B1A311E7BD18800C9ABD4 /* HTCodeToolPrototype.m in Sources */,
 				52397EAB1D7EEA5300809E81 /* HTPickerView.m in Sources */,
 				52187A311CA0F1F30002FEF8 /* main.m in Sources */,
 				52F2209A1CA3CF20007671FD /* UIView+Frame.m in Sources */,
@@ -500,7 +511,6 @@
 			files = (
 				52A7AC671D66B37100A0859F /* HTPerformanceTests.m in Sources */,
 				52E788311E67149100DC5514 /* HTDebugTests.m in Sources */,
-				52187A4A1CA0F1F30002FEF8 /* HTUtiltiesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
