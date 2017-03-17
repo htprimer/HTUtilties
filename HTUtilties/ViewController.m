@@ -8,10 +8,7 @@
 
 #import "ViewController.h"
 #import "GMBQRCodeScan.h"
-#import "QRCodeScanViewController.h"
 #import "NSObject+HTDebug.h"
-#import "HTTestModel.h"
-#import "HTBetaModel.h"
 #import "UIControl+HTBlock.h"
 #import "HTPickerView.h"
 #import "NSObject+HTDebug.h"

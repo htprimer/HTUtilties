@@ -35,10 +35,7 @@
 
 - (void)testDebugDesc
 {
-	UIView *testView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-	[testView setHt_debugBlock:^(NSObject *obj) {
-		NSLog(@"%@", obj);
-	}];
+
 	
 }
 

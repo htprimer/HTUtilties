@@ -19,14 +19,10 @@
 		52187A551CA0F1F30002FEF8 /* HTUtiltiesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52187A541CA0F1F30002FEF8 /* HTUtiltiesUITests.m */; };
 		52397EA51D7EB79100809E81 /* NSObject+HTDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 52397EA41D7EB79100809E81 /* NSObject+HTDebug.m */; };
 		52397EAB1D7EEA5300809E81 /* HTPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52397EAA1D7EEA5300809E81 /* HTPickerView.m */; };
-		523E4FD91D07D0BE00AF8155 /* HTBetaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 523E4FD81D07D0BE00AF8155 /* HTBetaModel.m */; };
 		5267E6631CAA205700008484 /* GMBQRCodeScan.m in Sources */ = {isa = PBXBuildFile; fileRef = 5267E6621CAA205700008484 /* GMBQRCodeScan.m */; };
-		5267E6651CAA5AF300008484 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5267E6641CAA5AF300008484 /* Assets.xcassets */; };
 		528A5A621D01813200D6A50C /* HTModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 528A5A611D01813200D6A50C /* HTModel.m */; };
-		528A5A651D01864E00D6A50C /* HTTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 528A5A641D01864E00D6A50C /* HTTestModel.m */; };
 		529B4C661D780FDF0035FD62 /* HTStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529B4C651D780FDF0035FD62 /* HTStackView.m */; };
 		52A7AC671D66B37100A0859F /* HTPerformanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A7AC661D66B37100A0859F /* HTPerformanceTests.m */; };
-		52B098ED1D3DD113000E01BE /* HTTestKVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B098EC1D3DD113000E01BE /* HTTestKVCModel.m */; };
 		52B68EAA1CCE1B8600F7A086 /* NSArray+HTDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B68EA91CCE1B8600F7A086 /* NSArray+HTDebug.m */; };
 		52B9CF881CC8C0BC003BCB03 /* UIView+HTDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B9CF871CC8C0BC003BCB03 /* UIView+HTDebug.m */; };
 		52CB8EC81E652293008F4976 /* UIAlertView+HTBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CB8EC71E652293008F4976 /* UIAlertView+HTBlock.m */; };
@@ -35,8 +31,6 @@
 		52F220951CA3CF19007671FD /* HTBlockTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F220941CA3CF19007671FD /* HTBlockTableView.m */; };
 		52F2209A1CA3CF20007671FD /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F220971CA3CF20007671FD /* UIView+Frame.m */; };
 		52F2209B1CA3CF20007671FD /* UIView+HTInspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F220991CA3CF20007671FD /* UIView+HTInspectable.m */; };
-		52F683F11CAA898E00F064E5 /* QRCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F683EF1CAA898E00F064E5 /* QRCodeScanViewController.m */; };
-		52F683F21CAA898E00F064E5 /* QRCodeScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F683F01CAA898E00F064E5 /* QRCodeScanViewController.xib */; };
 		5D16A5E137AFABC0B229CB25 /* libPods-HTUtilties.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10346C47DF9B06DDB95A22FC /* libPods-HTUtilties.a */; };
 /* End PBXBuildFile section */
 
@@ -84,20 +78,13 @@
 		52397EA41D7EB79100809E81 /* NSObject+HTDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HTDebug.m"; sourceTree = "<group>"; };
 		52397EA91D7EEA5300809E81 /* HTPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPickerView.h; sourceTree = "<group>"; };
 		52397EAA1D7EEA5300809E81 /* HTPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPickerView.m; sourceTree = "<group>"; };
-		523E4FD71D07D0BE00AF8155 /* HTBetaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTBetaModel.h; sourceTree = "<group>"; };
-		523E4FD81D07D0BE00AF8155 /* HTBetaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTBetaModel.m; sourceTree = "<group>"; };
 		5267E6611CAA205700008484 /* GMBQRCodeScan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMBQRCodeScan.h; sourceTree = "<group>"; };
 		5267E6621CAA205700008484 /* GMBQRCodeScan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMBQRCodeScan.m; sourceTree = "<group>"; };
-		5267E6641CAA5AF300008484 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		528A5A601D01813200D6A50C /* HTModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTModel.h; sourceTree = "<group>"; };
 		528A5A611D01813200D6A50C /* HTModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTModel.m; sourceTree = "<group>"; };
-		528A5A631D01864E00D6A50C /* HTTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTestModel.h; sourceTree = "<group>"; };
-		528A5A641D01864E00D6A50C /* HTTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTestModel.m; sourceTree = "<group>"; };
 		529B4C641D780FDF0035FD62 /* HTStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTStackView.h; sourceTree = "<group>"; };
 		529B4C651D780FDF0035FD62 /* HTStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTStackView.m; sourceTree = "<group>"; };
 		52A7AC661D66B37100A0859F /* HTPerformanceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPerformanceTests.m; sourceTree = "<group>"; };
-		52B098EB1D3DD113000E01BE /* HTTestKVCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTestKVCModel.h; sourceTree = "<group>"; };
-		52B098EC1D3DD113000E01BE /* HTTestKVCModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTestKVCModel.m; sourceTree = "<group>"; };
 		52B68EA81CCE1B8600F7A086 /* NSArray+HTDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HTDebug.h"; sourceTree = "<group>"; };
 		52B68EA91CCE1B8600F7A086 /* NSArray+HTDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HTDebug.m"; sourceTree = "<group>"; };
 		52B9CF831CC77567003BCB03 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -115,9 +102,6 @@
 		52F220971CA3CF20007671FD /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		52F220981CA3CF20007671FD /* UIView+HTInspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HTInspectable.h"; sourceTree = "<group>"; };
 		52F220991CA3CF20007671FD /* UIView+HTInspectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HTInspectable.m"; sourceTree = "<group>"; };
-		52F683EE1CAA898E00F064E5 /* QRCodeScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QRCodeScanViewController.h; path = HTUtilties/QRCodeScanViewController.h; sourceTree = "<group>"; };
-		52F683EF1CAA898E00F064E5 /* QRCodeScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QRCodeScanViewController.m; path = HTUtilties/QRCodeScanViewController.m; sourceTree = "<group>"; };
-		52F683F01CAA898E00F064E5 /* QRCodeScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QRCodeScanViewController.xib; path = HTUtilties/QRCodeScanViewController.xib; sourceTree = "<group>"; };
 		A9A831E90119B29B28243C25 /* Pods-HTUtilties.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTUtilties.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HTUtilties/Pods-HTUtilties.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,15 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				52F220811CA3CDBD007671FD /* HTUtilties */,
-				52B098EB1D3DD113000E01BE /* HTTestKVCModel.h */,
-				52B098EC1D3DD113000E01BE /* HTTestKVCModel.m */,
-				528A5A631D01864E00D6A50C /* HTTestModel.h */,
-				528A5A641D01864E00D6A50C /* HTTestModel.m */,
-				523E4FD71D07D0BE00AF8155 /* HTBetaModel.h */,
-				523E4FD81D07D0BE00AF8155 /* HTBetaModel.m */,
-				52F683EE1CAA898E00F064E5 /* QRCodeScanViewController.h */,
-				52F683EF1CAA898E00F064E5 /* QRCodeScanViewController.m */,
-				52F683F01CAA898E00F064E5 /* QRCodeScanViewController.xib */,
 				52187A321CA0F1F30002FEF8 /* AppDelegate.h */,
 				52187A331CA0F1F30002FEF8 /* AppDelegate.m */,
 				52187A351CA0F1F30002FEF8 /* ViewController.h */,
@@ -262,7 +237,6 @@
 		52F220811CA3CDBD007671FD /* HTUtilties */ = {
 			isa = PBXGroup;
 			children = (
-				5267E6641CAA5AF300008484 /* Assets.xcassets */,
 				528A5A5F1D01811700D6A50C /* Model */,
 				5267E6661CAA6BF900008484 /* Control */,
 				52F220911CA3CEF5007671FD /* Macro */,
@@ -427,8 +401,6 @@
 			files = (
 				52187A3F1CA0F1F30002FEF8 /* LaunchScreen.storyboard in Resources */,
 				52187A3C1CA0F1F30002FEF8 /* Assets.xcassets in Resources */,
-				5267E6651CAA5AF300008484 /* Assets.xcassets in Resources */,
-				52F683F21CAA898E00F064E5 /* QRCodeScanViewController.xib in Resources */,
 				52187A3A1CA0F1F30002FEF8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,7 +476,6 @@
 			files = (
 				52B68EAA1CCE1B8600F7A086 /* NSArray+HTDebug.m in Sources */,
 				529B4C661D780FDF0035FD62 /* HTStackView.m in Sources */,
-				523E4FD91D07D0BE00AF8155 /* HTBetaModel.m in Sources */,
 				52E6B3301D4714A60044F15A /* UIControl+HTBlock.m in Sources */,
 				52B9CF881CC8C0BC003BCB03 /* UIView+HTDebug.m in Sources */,
 				52CB8EC81E652293008F4976 /* UIAlertView+HTBlock.m in Sources */,
@@ -514,15 +485,12 @@
 				52F2209B1CA3CF20007671FD /* UIView+HTInspectable.m in Sources */,
 				52013CB31CD0C34B00E4B7F8 /* UIControl+HTDebug.m in Sources */,
 				52187A341CA0F1F30002FEF8 /* AppDelegate.m in Sources */,
-				52B098ED1D3DD113000E01BE /* HTTestKVCModel.m in Sources */,
 				52397EAB1D7EEA5300809E81 /* HTPickerView.m in Sources */,
 				52187A311CA0F1F30002FEF8 /* main.m in Sources */,
 				52F2209A1CA3CF20007671FD /* UIView+Frame.m in Sources */,
 				52F220951CA3CF19007671FD /* HTBlockTableView.m in Sources */,
 				528A5A621D01813200D6A50C /* HTModel.m in Sources */,
-				528A5A651D01864E00D6A50C /* HTTestModel.m in Sources */,
 				52013CB71CD1F1C900E4B7F8 /* NSDictionary+HTDebug.m in Sources */,
-				52F683F11CAA898E00F064E5 /* QRCodeScanViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
