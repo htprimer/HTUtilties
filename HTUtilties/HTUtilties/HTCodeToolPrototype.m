@@ -16,6 +16,26 @@
 
 @implementation HTCodeToolPrototype
 
+- (instancetype)performBLock:(SimpleBlock)block delay:(NSInteger)delay
+{
+	Block linkedBlock = [HTCodeToolPrototype convertSimpleBlock:block];
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		linkedBlock(self.blockArray.firstObject);
+	});
+	return self;
+}
+
++ (Block)convertSimpleBlock:(SimpleBlock)simpleBlock
+{
+	Block block = ^id (Block nextTask){
+		simpleBlock();
+		nextTask(nil);
+		return nil;
+	};
+	return block;
+}
+
+
 - (Block)combineBlock:(NSArray<Block> *)blocks
 {
 	Block (^combine)(Block caller, Block callee) = ^ Block (Block caller, Block callee) {

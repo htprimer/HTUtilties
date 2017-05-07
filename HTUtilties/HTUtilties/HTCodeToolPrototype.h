@@ -18,12 +18,12 @@ typedef HTCodeToolPrototype *(^TaskBlock)(SimpleBlock obj);
 
 @interface HTCodeToolPrototype : NSObject
 
+- (instancetype)performBLock:(SimpleBlock)block delay:(NSInteger)delay;
+
 - (Block)combineBlock:(NSArray<Block> *)blocks;
 
 - (Block)processBlock:(Block)block;
 
 - (TaskBlock)then;
-
-- (TaskBlock)done;
 
 @end

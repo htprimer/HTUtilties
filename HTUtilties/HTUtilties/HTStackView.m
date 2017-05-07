@@ -54,7 +54,7 @@
 	UIView *lastView = nil;
 	for (UIView *view in itemArray) {
 		[self.scrollView addSubview:view];
-		[view mas_makeConstraints:^(MASConstraintMaker *make) {
+		[view mas_remakeConstraints:^(MASConstraintMaker *make) {
 			
 			if (self.layoutDirection == HTStackViewLayoutDirectionHorizontal) {
 				if (lastView) {
