@@ -11,6 +11,10 @@
 @class HTViewStyle, HTLabelStyle, HTImageViewStyle, HTButtonStyle;
 
 @interface UIView (HTStyle)
+
+/**
+ return a view, aka [UIView new]
+ */
 @property (nonatomic, readonly, class) UIView *(^newView)();
 @property (nonatomic, readonly) HTViewStyle *config;
 @end
@@ -26,6 +30,10 @@
 @end
 
 @interface UIButton (HTStyle)
+
+/**
+ return a custom type button
+ */
 @property (nonatomic, readonly, class) UIButton *(^newView)();
 @property (nonatomic, readonly) HTButtonStyle *config;
 @end
@@ -169,27 +177,6 @@
 - (HTButtonStyle *(^)(void (^)(UIButton *)))clickBlock;
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
