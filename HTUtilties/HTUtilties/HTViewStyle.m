@@ -151,11 +151,11 @@
 	};
 }
 
-- (HTLabelStyle *(^)(UIFont *))font
+- (HTLabelStyle *(^)(CGFloat size))font
 {
-	return ^id(UIFont *font) {
+	return ^id(CGFloat size) {
 		UILabel *label = self.owner;
-		label.font = font;
+		label.font = [UIFont systemFontOfSize:size];
 		return self;
 	};
 }
@@ -242,11 +242,11 @@
 	};
 }
 
-- (HTButtonStyle *(^)(UIFont *))font
+- (HTButtonStyle *(^)(CGFloat size))font
 {
-	return ^id(UIFont *font) {
+	return ^id(CGFloat size) {
 		UIButton *button = self.owner;
-		button.titleLabel.font = font;
+		button.titleLabel.font = [UIFont systemFontOfSize:size];
 		return self;
 	};
 }

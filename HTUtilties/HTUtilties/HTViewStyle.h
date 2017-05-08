@@ -105,9 +105,9 @@
 - (HTLabelStyle *(^)(NSAttributedString *))attrText;
 
 /**
- set font
+ set font with font size
  */
-- (HTLabelStyle *(^)(UIFont *))font;
+- (HTLabelStyle *(^)(CGFloat size))font;
 
 /**
  set textColor
@@ -162,9 +162,9 @@
 - (HTButtonStyle *(^)(UIColor *, UIControlState))titleColor;
 
 /**
- set titleLabel font
+ set titleLabel font with font size
  */
-- (HTButtonStyle *(^)(UIFont *))font;
+- (HTButtonStyle *(^)(CGFloat size))font;
 
 /**
  add target for UIControlEventTouchUpInside
