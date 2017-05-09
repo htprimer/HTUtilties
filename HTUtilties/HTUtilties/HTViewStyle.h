@@ -46,47 +46,47 @@
 /**
  set superView, aka [superView addSubview self]
  */
-- (HTViewStyle *(^)(UIView *))parent;
+@property (nonatomic, readonly) HTViewStyle *(^parent)(UIView *);
 
 /**
  set backgroundColor
  */
-- (HTViewStyle *(^)(UIColor *))bgColor;
+@property (nonatomic, readonly) HTViewStyle *(^bgColor)(UIColor *);
 
 /**
  set layer cornerRadius
  */
-- (HTViewStyle *(^)(CGFloat))corner;
+@property (nonatomic, readonly) HTViewStyle *(^corner)(CGFloat);
 
 /**
  set layer borderColor
  */
-- (HTViewStyle *(^)(UIColor *))bdColor;
+@property (nonatomic, readonly) HTViewStyle *(^bdColor)(UIColor *);
 
 /**
  set layer borderWidth
  */
-- (HTViewStyle *(^)(CGFloat))bdWidth;
+@property (nonatomic, readonly) HTViewStyle *(^bdWidth)(CGFloat);
 
 /**
  set tag
  */
-- (HTViewStyle *(^)(NSInteger))tag;
+@property (nonatomic, readonly) HTViewStyle *(^tag)(NSInteger);
 
 /**
  set alpha
  */
-- (HTViewStyle *(^)(CGFloat))alpha;
+@property (nonatomic, readonly) HTViewStyle *(^alpha)(CGFloat);
 
 /**
  set tintColor
  */
-- (HTViewStyle *(^)(UIColor *))tint;
+@property (nonatomic, readonly) HTViewStyle *(^tint)(UIColor *);
 
 /**
  set conent mode
  */
-- (HTViewStyle *(^)(UIViewContentMode))mode;
+@property (nonatomic, readonly) HTViewStyle *(^mode)(UIViewContentMode);
 
 @end
 
@@ -97,32 +97,32 @@
 /**
  set text
  */
-- (HTLabelStyle *(^)(NSString *))text;
+@property (nonatomic, readonly) HTLabelStyle *(^text)(NSString *);
 
 /**
  set attributedString
  */
-- (HTLabelStyle *(^)(NSAttributedString *))attrText;
+@property (nonatomic, readonly) HTLabelStyle *(^attrText)(NSAttributedString *);
 
 /**
  set font with font size
  */
-- (HTLabelStyle *(^)(CGFloat size))font;
+@property (nonatomic, readonly) HTLabelStyle *(^font)(CGFloat size);
 
 /**
  set textColor
  */
-- (HTLabelStyle *(^)(UIColor *))textColor;
+@property (nonatomic, readonly) HTLabelStyle *(^textColor)(UIColor *);
 
 /**
  set numberOfLines
  */
-- (HTLabelStyle *(^)(NSUInteger))lines;
+@property (nonatomic, readonly) HTLabelStyle *(^lines)(NSUInteger);
 
 /**
  set text alignment
  */
-- (HTLabelStyle *(^)(NSTextAlignment))align;
+@property (nonatomic, readonly) HTLabelStyle *(^align)(NSTextAlignment);
 
 @end
 
@@ -133,7 +133,7 @@
 /**
  set image
  */
-- (HTImageViewStyle *(^)(UIImage *))image;
+@property (nonatomic, readonly) HTImageViewStyle *(^image)(UIImage *);
 
 @end
 
@@ -144,37 +144,37 @@
 /**
  set image for specific state
  */
-- (HTButtonStyle *(^)(UIImage *, UIControlState))image;
+@property (nonatomic, readonly) HTButtonStyle *(^image)(UIImage *, UIControlState);
 
 /**
  set backgroundImage for specific state
  */
-- (HTButtonStyle *(^)(UIImage *, UIControlState))bgImage;
+@property (nonatomic, readonly) HTButtonStyle *(^bgImage)(UIImage *, UIControlState);
 
 /**
  set title for specific state
  */
-- (HTButtonStyle *(^)(NSString *, UIControlState))title;
+@property (nonatomic, readonly) HTButtonStyle *(^title)(NSString *, UIControlState);
 
 /**
  set titleColor for specific state
  */
-- (HTButtonStyle *(^)(UIColor *, UIControlState))titleColor;
+@property (nonatomic, readonly) HTButtonStyle *(^titleColor)(UIColor *, UIControlState);
 
 /**
  set titleLabel font with font size
  */
-- (HTButtonStyle *(^)(CGFloat size))font;
+@property (nonatomic, readonly) HTButtonStyle *(^font)(CGFloat size);
 
 /**
  add target for UIControlEventTouchUpInside
  */
-- (HTButtonStyle *(^)(id, SEL))onClick;
+@property (nonatomic, readonly) HTButtonStyle *(^onClick)(id, SEL);
 
 /**
  add callback block for UIControlEventTouchUpInside
  */
-- (HTButtonStyle *(^)(void (^)(UIButton *)))clickBlock;
+@property (nonatomic, readonly) HTButtonStyle *(^clickBlock)(void (^)(UIButton *));
 
 @end
 
