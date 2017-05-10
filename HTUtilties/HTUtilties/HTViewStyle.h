@@ -8,25 +8,38 @@
 
 #import <UIKit/UIKit.h>
 
+#define HTBaseStyle(Type)     \
+\
+@property (nonatomic, readonly) Type (^parent)(UIView *);			\
+\
+@property (nonatomic, readonly) Type (^bgColor)(UIColor *);			\
+\
+@property (nonatomic, readonly) Type (^corner)(CGFloat);			\
+\
+@property (nonatomic, readonly) Type (^bdColor)(UIColor *);			\
+\
+@property (nonatomic, readonly) Type (^bdWidth)(CGFloat);			\
+\
+@property (nonatomic, readonly) Type (^tag)(NSInteger);				\
+\
+@property (nonatomic, readonly) Type (^alpha)(CGFloat);				\
+\
+@property (nonatomic, readonly) Type (^tint)(UIColor *);			\
+\
+@property (nonatomic, readonly) Type (^mode)(UIViewContentMode);	\
+
 @class HTViewStyle, HTLabelStyle, HTImageViewStyle, HTButtonStyle;
 
 @interface UIView (HTStyle)
-
-/**
- return a view, aka [UIView new]
- */
-@property (nonatomic, readonly, class) UIView *(^newView)();
-@property (nonatomic, readonly) HTViewStyle *config;
+@property (nonatomic, readonly) HTViewStyle *style;
 @end
 
 @interface UILabel (HTStyle)
-@property (nonatomic, readonly, class) UILabel *(^newView)();
-@property (nonatomic, readonly) HTLabelStyle *config;
+@property (nonatomic, readonly) HTLabelStyle *style;
 @end
 
 @interface UIImageView (HTStyle)
-@property (nonatomic, readonly, class) UIImageView *(^newView)();
-@property (nonatomic, readonly) HTImageViewStyle *config;
+@property (nonatomic, readonly) HTImageViewStyle *style;
 @end
 
 @interface UIButton (HTStyle)
@@ -34,65 +47,24 @@
 /**
  return a custom type button
  */
-@property (nonatomic, readonly, class) UIButton *(^newView)();
-@property (nonatomic, readonly) HTButtonStyle *config;
+@property (nonatomic, readonly, class) UIButton *newButton;
+@property (nonatomic, readonly) HTButtonStyle *style;
 @end
 
 
 @interface HTViewStyle : NSObject
 
+HTBaseStyle(HTViewStyle *)
+
 @property (nonatomic, weak) __kindof UIView *owner;
-
-/**
- set superView, aka [superView addSubview self]
- */
-@property (nonatomic, readonly) HTViewStyle *(^parent)(UIView *);
-
-/**
- set backgroundColor
- */
-@property (nonatomic, readonly) HTViewStyle *(^bgColor)(UIColor *);
-
-/**
- set layer cornerRadius
- */
-@property (nonatomic, readonly) HTViewStyle *(^corner)(CGFloat);
-
-/**
- set layer borderColor
- */
-@property (nonatomic, readonly) HTViewStyle *(^bdColor)(UIColor *);
-
-/**
- set layer borderWidth
- */
-@property (nonatomic, readonly) HTViewStyle *(^bdWidth)(CGFloat);
-
-/**
- set tag
- */
-@property (nonatomic, readonly) HTViewStyle *(^tag)(NSInteger);
-
-/**
- set alpha
- */
-@property (nonatomic, readonly) HTViewStyle *(^alpha)(CGFloat);
-
-/**
- set tintColor
- */
-@property (nonatomic, readonly) HTViewStyle *(^tint)(UIColor *);
-
-/**
- set conent mode
- */
-@property (nonatomic, readonly) HTViewStyle *(^mode)(UIViewContentMode);
 
 @end
 
 
 
 @interface HTLabelStyle : HTViewStyle
+
+HTBaseStyle(HTLabelStyle *)
 
 /**
  set text
@@ -130,6 +102,8 @@
 
 @interface HTImageViewStyle : HTViewStyle
 
+HTBaseStyle(HTImageViewStyle *)
+
 /**
  set image
  */
@@ -140,6 +114,8 @@
 
 
 @interface HTButtonStyle : HTViewStyle
+
+HTBaseStyle(HTButtonStyle *)
 
 /**
  set image for specific state
@@ -174,7 +150,7 @@
 /**
  add callback block for UIControlEventTouchUpInside
  */
-@property (nonatomic, readonly) HTButtonStyle *(^clickBlock)(void (^)(UIButton *));
+@property (nonatomic, readonly) HTButtonStyle *(^clickBlock)(void (^)(UIButton *sender));
 
 @end
 

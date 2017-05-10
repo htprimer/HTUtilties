@@ -9,20 +9,11 @@
 #import "HTViewStyle.h"
 #import <objc/runtime.h>
 
+#define DynamicBaseStyle @dynamic parent, bgColor, corner, bdColor, bdWidth, tag, alpha, tint, mode;
+
 @implementation UIView (HTStyle)
 
-+ (UIView *(^)())newView
-{
-	return ^id(){
-		if ([self isSubclassOfClass:[UIButton class]]) {
-			return [UIButton buttonWithType:UIButtonTypeCustom];
-		} else {
-			return [self new];
-		}
-	};
-}
-
-- (HTViewStyle *)config
+- (HTViewStyle *)style
 {
 	HTViewStyle *style = nil;
 	if ([self isMemberOfClass:[UIView class]]) {
@@ -50,6 +41,11 @@
 @end
 
 @implementation UIButton (HTStyle)
+
++ (UIButton *)newButton
+{
+	return [self buttonWithType:UIButtonTypeCustom];
+}
 
 @end
 
@@ -133,6 +129,8 @@
 
 @implementation HTLabelStyle
 
+DynamicBaseStyle
+
 - (HTLabelStyle *(^)(NSString *))text
 {
 	return ^id(NSString *text) {
@@ -192,6 +190,8 @@
 
 @implementation HTImageViewStyle
 
+DynamicBaseStyle
+
 - (HTImageViewStyle *(^)(UIImage *))image
 {
 	return ^id(UIImage *image) {
@@ -205,6 +205,8 @@
 
 
 @implementation HTButtonStyle
+
+DynamicBaseStyle
 
 - (HTButtonStyle *(^)(UIImage *, UIControlState))image
 {
