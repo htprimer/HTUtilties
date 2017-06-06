@@ -40,6 +40,7 @@
 		make.centerX.equalTo(@0);
 		make.centerY.equalTo(@-100);
 	}];
+	
 }
 
 @end
