@@ -10,11 +10,4 @@
 
 @implementation NSObject (HTDSL)
 
-+ (instancetype (^)())newObject
-{
-	return ^ id {
-		return [self new];
-	};
-}
-
 @end

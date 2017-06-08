@@ -10,8 +10,5 @@
 
 @interface NSObject (HTDSL)
 
-//@property (nonatomic, class, readonly) instancetype (^newObject)();
-
-+ (instancetype (^)())newObject;
 
 @end
