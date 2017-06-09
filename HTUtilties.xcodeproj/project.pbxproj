@@ -18,12 +18,12 @@
 		52187A551CA0F1F30002FEF8 /* HTUtiltiesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52187A541CA0F1F30002FEF8 /* HTUtiltiesUITests.m */; };
 		52397EA51D7EB79100809E81 /* NSObject+HTDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 52397EA41D7EB79100809E81 /* NSObject+HTDebug.m */; };
 		52397EAB1D7EEA5300809E81 /* HTPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52397EAA1D7EEA5300809E81 /* HTPickerView.m */; };
-		5245BDB21EB70BD700D4E8F1 /* NSObject+HTDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 5245BDB11EB70BD700D4E8F1 /* NSObject+HTDSL.m */; };
 		5267E6631CAA205700008484 /* GMBQRCodeScan.m in Sources */ = {isa = PBXBuildFile; fileRef = 5267E6621CAA205700008484 /* GMBQRCodeScan.m */; };
 		528A5A621D01813200D6A50C /* HTModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 528A5A611D01813200D6A50C /* HTModel.m */; };
 		529B1A311E7BD18800C9ABD4 /* HTCodeToolPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 529B1A301E7BD18800C9ABD4 /* HTCodeToolPrototype.m */; };
 		529B4C661D780FDF0035FD62 /* HTStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529B4C651D780FDF0035FD62 /* HTStackView.m */; };
 		52B68EAA1CCE1B8600F7A086 /* NSArray+HTDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B68EA91CCE1B8600F7A086 /* NSArray+HTDebug.m */; };
+		52C4C94E1EE93BAA00564D2B /* HTEfficiency.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C4C94D1EE93BAA00564D2B /* HTEfficiency.m */; };
 		52CB8EC81E652293008F4976 /* UIAlertView+HTBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CB8EC71E652293008F4976 /* UIAlertView+HTBlock.m */; };
 		52E6B3301D4714A60044F15A /* UIControl+HTBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E6B32F1D4714A60044F15A /* UIControl+HTBlock.m */; };
 		52F220951CA3CF19007671FD /* HTBlockTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F220941CA3CF19007671FD /* HTBlockTableView.m */; };
@@ -76,8 +76,6 @@
 		52397EA41D7EB79100809E81 /* NSObject+HTDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HTDebug.m"; sourceTree = "<group>"; };
 		52397EA91D7EEA5300809E81 /* HTPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPickerView.h; sourceTree = "<group>"; };
 		52397EAA1D7EEA5300809E81 /* HTPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPickerView.m; sourceTree = "<group>"; };
-		5245BDB01EB70BD700D4E8F1 /* NSObject+HTDSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HTDSL.h"; sourceTree = "<group>"; };
-		5245BDB11EB70BD700D4E8F1 /* NSObject+HTDSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HTDSL.m"; sourceTree = "<group>"; };
 		5267E6611CAA205700008484 /* GMBQRCodeScan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMBQRCodeScan.h; sourceTree = "<group>"; };
 		5267E6621CAA205700008484 /* GMBQRCodeScan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMBQRCodeScan.m; sourceTree = "<group>"; };
 		528A5A601D01813200D6A50C /* HTModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTModel.h; sourceTree = "<group>"; };
@@ -89,6 +87,8 @@
 		52B68EA81CCE1B8600F7A086 /* NSArray+HTDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HTDebug.h"; sourceTree = "<group>"; };
 		52B68EA91CCE1B8600F7A086 /* NSArray+HTDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HTDebug.m"; sourceTree = "<group>"; };
 		52B9CF831CC77567003BCB03 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		52C4C94C1EE93BAA00564D2B /* HTEfficiency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTEfficiency.h; sourceTree = "<group>"; };
+		52C4C94D1EE93BAA00564D2B /* HTEfficiency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTEfficiency.m; sourceTree = "<group>"; };
 		52CB8EC61E652293008F4976 /* UIAlertView+HTBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+HTBlock.h"; sourceTree = "<group>"; };
 		52CB8EC71E652293008F4976 /* UIAlertView+HTBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+HTBlock.m"; sourceTree = "<group>"; };
 		52E6B32E1D4714A60044F15A /* UIControl+HTBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+HTBlock.h"; sourceTree = "<group>"; };
@@ -236,10 +236,10 @@
 			children = (
 				529B1A2F1E7BD18800C9ABD4 /* HTCodeToolPrototype.h */,
 				529B1A301E7BD18800C9ABD4 /* HTCodeToolPrototype.m */,
-				5245BDB01EB70BD700D4E8F1 /* NSObject+HTDSL.h */,
-				5245BDB11EB70BD700D4E8F1 /* NSObject+HTDSL.m */,
 				52FA3AE81EBECBCE00920D33 /* HTViewStyle.h */,
 				52FA3AE91EBECBCE00920D33 /* HTViewStyle.m */,
+				52C4C94C1EE93BAA00564D2B /* HTEfficiency.h */,
+				52C4C94D1EE93BAA00564D2B /* HTEfficiency.m */,
 			);
 			name = CodeTool;
 			sourceTree = "<group>";
@@ -489,7 +489,6 @@
 				52E6B3301D4714A60044F15A /* UIControl+HTBlock.m in Sources */,
 				52CB8EC81E652293008F4976 /* UIAlertView+HTBlock.m in Sources */,
 				5267E6631CAA205700008484 /* GMBQRCodeScan.m in Sources */,
-				5245BDB21EB70BD700D4E8F1 /* NSObject+HTDSL.m in Sources */,
 				52187A371CA0F1F30002FEF8 /* ViewController.m in Sources */,
 				52397EA51D7EB79100809E81 /* NSObject+HTDebug.m in Sources */,
 				52F2209B1CA3CF20007671FD /* UIView+HTInspectable.m in Sources */,
@@ -502,6 +501,7 @@
 				52F220951CA3CF19007671FD /* HTBlockTableView.m in Sources */,
 				528A5A621D01813200D6A50C /* HTModel.m in Sources */,
 				52013CB71CD1F1C900E4B7F8 /* NSDictionary+HTDebug.m in Sources */,
+				52C4C94E1EE93BAA00564D2B /* HTEfficiency.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
