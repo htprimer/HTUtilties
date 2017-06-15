@@ -31,15 +31,15 @@
 @class HTViewStyle, HTLabelStyle, HTImageViewStyle, HTButtonStyle;
 
 @interface UIView (HTStyle)
-@property (nonatomic, readonly) HTViewStyle *style;
+@property (nonatomic, readonly) HTViewStyle *htStyle;
 @end
 
 @interface UILabel (HTStyle)
-@property (nonatomic, readonly) HTLabelStyle *style;
+@property (nonatomic, readonly) HTLabelStyle *htStyle;
 @end
 
 @interface UIImageView (HTStyle)
-@property (nonatomic, readonly) HTImageViewStyle *style;
+@property (nonatomic, readonly) HTImageViewStyle *htStyle;
 @end
 
 @interface UIButton (HTStyle)
@@ -48,7 +48,7 @@
  return a custom type button
  */
 @property (nonatomic, readonly, class) UIButton *newButton;
-@property (nonatomic, readonly) HTButtonStyle *style;
+@property (nonatomic, readonly) HTButtonStyle *htStyle;
 @end
 
 

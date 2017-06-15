@@ -13,7 +13,7 @@
 
 @implementation UIView (HTStyle)
 
-- (HTViewStyle *)style
+- (HTViewStyle *)htStyle
 {
 	HTViewStyle *style = nil;
 	if ([self isMemberOfClass:[UIView class]]) {

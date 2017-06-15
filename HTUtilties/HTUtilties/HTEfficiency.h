@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+void HTDispatchAsyncMain(dispatch_block_t block);
+void HTDispatchAsyncGlobal(dispatch_block_t block);
+void HTDispatchAfter(float sec, dispatch_block_t block);
+
 @interface HTEfficiency : NSObject
 
 @end

@@ -23,13 +23,13 @@
 		529B1A311E7BD18800C9ABD4 /* HTCodeToolPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 529B1A301E7BD18800C9ABD4 /* HTCodeToolPrototype.m */; };
 		529B4C661D780FDF0035FD62 /* HTStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529B4C651D780FDF0035FD62 /* HTStackView.m */; };
 		52B68EAA1CCE1B8600F7A086 /* NSArray+HTDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B68EA91CCE1B8600F7A086 /* NSArray+HTDebug.m */; };
-		52C4C94E1EE93BAA00564D2B /* HTEfficiency.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C4C94D1EE93BAA00564D2B /* HTEfficiency.m */; };
+		52C4C9751EF29FC300564D2B /* HTViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C4C9721EF29FC300564D2B /* HTViewStyle.m */; };
+		52C4C9761EF29FC300564D2B /* HTEfficiency.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C4C9741EF29FC300564D2B /* HTEfficiency.m */; };
 		52CB8EC81E652293008F4976 /* UIAlertView+HTBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CB8EC71E652293008F4976 /* UIAlertView+HTBlock.m */; };
 		52E6B3301D4714A60044F15A /* UIControl+HTBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E6B32F1D4714A60044F15A /* UIControl+HTBlock.m */; };
 		52F220951CA3CF19007671FD /* HTBlockTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F220941CA3CF19007671FD /* HTBlockTableView.m */; };
 		52F2209A1CA3CF20007671FD /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F220971CA3CF20007671FD /* UIView+Frame.m */; };
 		52F2209B1CA3CF20007671FD /* UIView+HTInspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F220991CA3CF20007671FD /* UIView+HTInspectable.m */; };
-		52FA3AEA1EBECBCE00920D33 /* HTViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FA3AE91EBECBCE00920D33 /* HTViewStyle.m */; };
 		5D16A5E137AFABC0B229CB25 /* libPods-HTUtilties.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10346C47DF9B06DDB95A22FC /* libPods-HTUtilties.a */; };
 /* End PBXBuildFile section */
 
@@ -87,8 +87,10 @@
 		52B68EA81CCE1B8600F7A086 /* NSArray+HTDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HTDebug.h"; sourceTree = "<group>"; };
 		52B68EA91CCE1B8600F7A086 /* NSArray+HTDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HTDebug.m"; sourceTree = "<group>"; };
 		52B9CF831CC77567003BCB03 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		52C4C94C1EE93BAA00564D2B /* HTEfficiency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTEfficiency.h; sourceTree = "<group>"; };
-		52C4C94D1EE93BAA00564D2B /* HTEfficiency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTEfficiency.m; sourceTree = "<group>"; };
+		52C4C9711EF29FC300564D2B /* HTViewStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTViewStyle.h; sourceTree = "<group>"; };
+		52C4C9721EF29FC300564D2B /* HTViewStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTViewStyle.m; sourceTree = "<group>"; };
+		52C4C9731EF29FC300564D2B /* HTEfficiency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTEfficiency.h; sourceTree = "<group>"; };
+		52C4C9741EF29FC300564D2B /* HTEfficiency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTEfficiency.m; sourceTree = "<group>"; };
 		52CB8EC61E652293008F4976 /* UIAlertView+HTBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+HTBlock.h"; sourceTree = "<group>"; };
 		52CB8EC71E652293008F4976 /* UIAlertView+HTBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+HTBlock.m"; sourceTree = "<group>"; };
 		52E6B32E1D4714A60044F15A /* UIControl+HTBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+HTBlock.h"; sourceTree = "<group>"; };
@@ -100,8 +102,6 @@
 		52F220971CA3CF20007671FD /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		52F220981CA3CF20007671FD /* UIView+HTInspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HTInspectable.h"; sourceTree = "<group>"; };
 		52F220991CA3CF20007671FD /* UIView+HTInspectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HTInspectable.m"; sourceTree = "<group>"; };
-		52FA3AE81EBECBCE00920D33 /* HTViewStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTViewStyle.h; sourceTree = "<group>"; };
-		52FA3AE91EBECBCE00920D33 /* HTViewStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTViewStyle.m; sourceTree = "<group>"; };
 		A9A831E90119B29B28243C25 /* Pods-HTUtilties.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTUtilties.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HTUtilties/Pods-HTUtilties.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -236,10 +236,10 @@
 			children = (
 				529B1A2F1E7BD18800C9ABD4 /* HTCodeToolPrototype.h */,
 				529B1A301E7BD18800C9ABD4 /* HTCodeToolPrototype.m */,
-				52FA3AE81EBECBCE00920D33 /* HTViewStyle.h */,
-				52FA3AE91EBECBCE00920D33 /* HTViewStyle.m */,
-				52C4C94C1EE93BAA00564D2B /* HTEfficiency.h */,
-				52C4C94D1EE93BAA00564D2B /* HTEfficiency.m */,
+				52C4C9711EF29FC300564D2B /* HTViewStyle.h */,
+				52C4C9721EF29FC300564D2B /* HTViewStyle.m */,
+				52C4C9731EF29FC300564D2B /* HTEfficiency.h */,
+				52C4C9741EF29FC300564D2B /* HTEfficiency.m */,
 			);
 			name = CodeTool;
 			sourceTree = "<group>";
@@ -483,7 +483,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52FA3AEA1EBECBCE00920D33 /* HTViewStyle.m in Sources */,
 				52B68EAA1CCE1B8600F7A086 /* NSArray+HTDebug.m in Sources */,
 				529B4C661D780FDF0035FD62 /* HTStackView.m in Sources */,
 				52E6B3301D4714A60044F15A /* UIControl+HTBlock.m in Sources */,
@@ -491,7 +490,9 @@
 				5267E6631CAA205700008484 /* GMBQRCodeScan.m in Sources */,
 				52187A371CA0F1F30002FEF8 /* ViewController.m in Sources */,
 				52397EA51D7EB79100809E81 /* NSObject+HTDebug.m in Sources */,
+				52C4C9761EF29FC300564D2B /* HTEfficiency.m in Sources */,
 				52F2209B1CA3CF20007671FD /* UIView+HTInspectable.m in Sources */,
+				52C4C9751EF29FC300564D2B /* HTViewStyle.m in Sources */,
 				52013CB31CD0C34B00E4B7F8 /* UIControl+HTDebug.m in Sources */,
 				52187A341CA0F1F30002FEF8 /* AppDelegate.m in Sources */,
 				529B1A311E7BD18800C9ABD4 /* HTCodeToolPrototype.m in Sources */,
@@ -501,7 +502,6 @@
 				52F220951CA3CF19007671FD /* HTBlockTableView.m in Sources */,
 				528A5A621D01813200D6A50C /* HTModel.m in Sources */,
 				52013CB71CD1F1C900E4B7F8 /* NSDictionary+HTDebug.m in Sources */,
-				52C4C94E1EE93BAA00564D2B /* HTEfficiency.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
