@@ -16,14 +16,14 @@
 - (HTViewStyle *)htStyle
 {
 	HTViewStyle *style = nil;
-	if ([self isMemberOfClass:[UIView class]]) {
-		style = [HTViewStyle new];
-	} else if ([self isMemberOfClass:[UILabel class]]) {
-		style = [HTLabelStyle new];
-	} else if ([self isMemberOfClass:[UIImageView class]]) {
-		style = [HTImageViewStyle new];
-	} else if ([self isMemberOfClass:[UIButton class]]) {
+	if ([self isKindOfClass:[UIButton class]]) {
 		style = [HTButtonStyle new];
+	} else if ([self isKindOfClass:[UILabel class]]) {
+		style = [HTLabelStyle new];
+	} else if ([self isKindOfClass:[UIImageView class]]) {
+		style = [HTImageViewStyle new];
+	} else if ([self isKindOfClass:[UIView class]]) {
+		style = [HTViewStyle new];
 	}
 	style.owner = self;
 	NSAssert(style, @"not a view or unsupported view");
