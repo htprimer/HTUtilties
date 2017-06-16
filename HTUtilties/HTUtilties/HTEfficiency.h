@@ -19,7 +19,7 @@ void HTDispatchAfter(float sec, dispatch_block_t block);
 
 @interface NSArray<__covariant ObjectType> (HTEfficiency)
 
-- (NSMutableArray *)ht_filterWithBlock:(BOOL (^)(ObjectType obj))block;
+- (NSMutableArray<ObjectType> *)ht_filterWithBlock:(BOOL (^)(ObjectType obj))block;
 
 - (NSMutableArray *)ht_mapWithBlock:(id (^)(ObjectType obj))block;
 
