@@ -158,6 +158,15 @@ DynamicBaseStyle
 	};
 }
 
+- (HTLabelStyle *(^)(CGFloat, CGFloat))weightFont
+{
+	return ^id(CGFloat weight, CGFloat size) {
+		UILabel *label = self.owner;
+		label.font = [UIFont systemFontOfSize:size weight:weight];
+		return self;
+	};
+}
+
 - (HTLabelStyle *(^)(UIColor *))textColor
 {
 	return ^id(UIColor *color) {
@@ -249,6 +258,15 @@ DynamicBaseStyle
 	return ^id(CGFloat size) {
 		UIButton *button = self.owner;
 		button.titleLabel.font = [UIFont systemFontOfSize:size];
+		return self;
+	};
+}
+
+- (HTButtonStyle *(^)(CGFloat, CGFloat))weightFont
+{
+	return ^id(CGFloat weight, CGFloat size) {
+		UIButton *button = self.owner;
+		button.titleLabel.font = [UIFont systemFontOfSize:size weight:weight];
 		return self;
 	};
 }

@@ -13,8 +13,9 @@
 
 @implementation UIControl (HTBlock)
 
-- (void)addHandler:(void (^)(UIControl *))handler forEvent:(UIControlEvents)event
+- (void)addHandler:(void (^)(__kindof UIControl *))handler forEvent:(UIControlEvents)event
 {
+	[self removeTarget:self action:@selector(OnHandler) forControlEvents:event];
 	[self addTarget:self action:@selector(OnHandler) forControlEvents:event];
 	objc_setAssociatedObject(self, HandlerKey, handler, OBJC_ASSOCIATION_COPY);
 }

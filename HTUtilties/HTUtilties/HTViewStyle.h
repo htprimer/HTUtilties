@@ -82,6 +82,11 @@ HTBaseStyle(HTLabelStyle *)
 @property (nonatomic, readonly) HTLabelStyle *(^font)(CGFloat size);
 
 /**
+ set font with font size and weight
+ */
+@property (nonatomic, readonly) HTLabelStyle *(^weightFont)(CGFloat weight, CGFloat size);
+
+/**
  set textColor
  */
 @property (nonatomic, readonly) HTLabelStyle *(^textColor)(UIColor *);
@@ -141,6 +146,11 @@ HTBaseStyle(HTButtonStyle *)
  set titleLabel font with font size
  */
 @property (nonatomic, readonly) HTButtonStyle *(^font)(CGFloat size);
+
+/**
+ set titleLabel font with size and weight
+ */
+@property (nonatomic, readonly) HTButtonStyle *(^weightFont)(CGFloat weight, CGFloat size);
 
 /**
  add target for UIControlEventTouchUpInside
