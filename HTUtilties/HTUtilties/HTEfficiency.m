@@ -3,10 +3,11 @@
 //  HTUtilties
 //
 //  Created by John on 2017/6/8.
-//  Copyright © 2017年 江海天. All rights reserved.
+//  Copyright © 2017年 John. All rights reserved.
 //
 
 #import "HTEfficiency.h"
+#import <objc/runtime.h>
 
 inline void HTDispatchAsyncMain(dispatch_block_t block)
 {
@@ -18,7 +19,7 @@ inline void HTDispatchAsyncGlobal(dispatch_block_t block)
 	dispatch_async(dispatch_get_global_queue(0, 0), block);
 }
 
-void HTDispatchSyncSerial(dispatch_block_t block)
+void HTDispatchAsyncSerial(dispatch_block_t block)
 {
 	static dispatch_once_t onceToken;
 	static dispatch_queue_t serialQueue;
@@ -39,6 +40,16 @@ inline void HTDispatchGlobalThenMain(dispatch_block_t globalBlock, dispatch_bloc
 		globalBlock();
 		HTDispatchAsyncMain(mainBlock);
 	});
+}
+
+inline id HTGetAssociatedObject(id obj, NSString *key, id (^genBlock)())
+{
+	id value = objc_getAssociatedObject(obj, (__bridge const void *)(key));
+	if (!value && genBlock) {
+		value = genBlock();
+		objc_setAssociatedObject(obj, (__bridge const void *)(key), value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+	}
+	return value;
 }
 
 @implementation NSArray (HTEfficiency)
@@ -79,22 +90,7 @@ inline void HTDispatchGlobalThenMain(dispatch_block_t globalBlock, dispatch_bloc
 
 + (void)testMethod
 {
-	NSArray<NSString *> *stringArray = nil;
-	[stringArray ht_mapWithBlock:^id(NSString *obj) {
-		return nil;
-	}];
 	
-	HTDispatchAsyncMain(^{
-		NSLog(@"%@", @"perform in main queue");
-	});
-	
-	HTDispatchAsyncGlobal(^{
-		NSLog(@"%@", @"perform in global queue");
-	});
-	
-	HTDispatchAfter(3, ^{
-		NSLog(@"%@", @"perfrom atfer");
-	});
 }
 
 @end

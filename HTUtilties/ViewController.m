@@ -40,6 +40,21 @@
 		make.centerY.equalTo(@-100);
 	}];
 	
+	[self testDebug];
+}
+
+- (void)testDebug
+{
+	UIView *view = [UIView new];
+	HTVarNameDesc(view);
+	[view changeClassName:@"testView"];
+	
+	[self.view addSubview:view];
+	[view mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.center.equalTo(@0);
+		make.width.height.equalTo(@200);
+		make.height.equalTo(@300);
+	}];
 }
 
 @end
